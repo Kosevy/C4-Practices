@@ -1,0 +1,667 @@
+{
+    "configuration": {},
+    "description": "Entonrno de colaboracion alumno docente",
+    "documentation": {},
+    "id": 103399,
+    "lastModifiedAgent": "structurizr-cloud/dsl-editor/68ff387b-8927-4f0d-8abb-eccd512ef781",
+    "lastModifiedDate": "2025-06-13T01:10:23Z",
+    "lastModifiedUser": "effortgy@hotmail.com",
+    "model": {
+        "people": [
+            {
+                "description": "usuario que consulta material del curso",
+                "id": "1",
+                "location": "Unspecified",
+                "name": "alumno",
+                "properties": {
+                    "structurizr.dsl.identifier": "alumno"
+                },
+                "relationships": [
+                    {
+                        "description": "lee material",
+                        "destinationId": "4",
+                        "id": "18",
+                        "sourceId": "1",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "ingresa",
+                        "destinationId": "5",
+                        "id": "22",
+                        "sourceId": "1",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person"
+            },
+            {
+                "description": "usuario que publica material",
+                "id": "2",
+                "location": "Unspecified",
+                "name": "docente",
+                "properties": {
+                    "structurizr.dsl.identifier": "docente"
+                },
+                "relationships": [
+                    {
+                        "description": "publica material",
+                        "destinationId": "4",
+                        "id": "19",
+                        "sourceId": "2",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "ingresa",
+                        "destinationId": "5",
+                        "id": "23",
+                        "sourceId": "2",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person"
+            },
+            {
+                "description": "supervisa el contenido del aula",
+                "id": "3",
+                "location": "Unspecified",
+                "name": "supervisor",
+                "properties": {
+                    "structurizr.dsl.identifier": "supervisor"
+                },
+                "relationships": [
+                    {
+                        "description": "supervisando",
+                        "destinationId": "4",
+                        "id": "20",
+                        "sourceId": "3",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "ingresa",
+                        "destinationId": "5",
+                        "id": "24",
+                        "sourceId": "3",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person,Super"
+            }
+        ],
+        "softwareSystems": [
+            {
+                "containers": [
+                    {
+                        "description": "Interfase del aula",
+                        "documentation": {},
+                        "id": "5",
+                        "name": "App web",
+                        "properties": {
+                            "structurizr.dsl.identifier": "webapp"
+                        },
+                        "relationships": [
+                            {
+                                "description": "usa",
+                                "destinationId": "13",
+                                "id": "25",
+                                "sourceId": "5",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "14",
+                                "id": "26",
+                                "sourceId": "5",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "6",
+                                "id": "27",
+                                "sourceId": "5",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "15",
+                                "id": "28",
+                                "sourceId": "5",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "7",
+                                "id": "38",
+                                "sourceId": "5",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container",
+                        "technology": "java 9 jsf"
+                    },
+                    {
+                        "components": [
+                            {
+                                "description": "interfase ultra",
+                                "documentation": {},
+                                "id": "7",
+                                "name": "Ultra",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "ultra"
+                                },
+                                "relationships": [
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "8",
+                                        "id": "33",
+                                        "sourceId": "7",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "9",
+                                        "id": "34",
+                                        "sourceId": "7",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "10",
+                                        "id": "35",
+                                        "sourceId": "7",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "11",
+                                        "id": "36",
+                                        "sourceId": "7",
+                                        "tags": "Relationship"
+                                    }
+                                ],
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "description": "Sesion de chat",
+                                "documentation": {},
+                                "id": "8",
+                                "name": "Chat",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "chat"
+                                },
+                                "relationships": [
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "12",
+                                        "id": "39",
+                                        "sourceId": "8",
+                                        "tags": "Relationship"
+                                    }
+                                ],
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "description": "Compartir pantalla",
+                                "documentation": {},
+                                "id": "9",
+                                "name": "pantalla",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "pantalla"
+                                },
+                                "relationships": [
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "12",
+                                        "id": "40",
+                                        "sourceId": "9",
+                                        "tags": "Relationship"
+                                    }
+                                ],
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "description": "realizar sondeos",
+                                "documentation": {},
+                                "id": "10",
+                                "name": "encuesta",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "encuesta"
+                                },
+                                "relationships": [
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "12",
+                                        "id": "41",
+                                        "sourceId": "10",
+                                        "tags": "Relationship"
+                                    }
+                                ],
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "description": "sesion virtual",
+                                "documentation": {},
+                                "id": "11",
+                                "name": "video",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "video"
+                                },
+                                "relationships": [
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "12",
+                                        "id": "42",
+                                        "sourceId": "11",
+                                        "tags": "Relationship"
+                                    }
+                                ],
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "description": "conector a BD oracle",
+                                "documentation": {},
+                                "id": "12",
+                                "name": "conector",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "conector"
+                                },
+                                "relationships": [
+                                    {
+                                        "description": "conecta",
+                                        "destinationId": "16",
+                                        "id": "37",
+                                        "sourceId": "12",
+                                        "tags": "Relationship"
+                                    }
+                                ],
+                                "tags": "Element,Component"
+                            }
+                        ],
+                        "description": "Sesion virtual",
+                        "documentation": {},
+                        "id": "6",
+                        "name": "Colaborate",
+                        "properties": {
+                            "structurizr.dsl.identifier": "collaborate"
+                        },
+                        "relationships": [
+                            {
+                                "description": "lee y escribe",
+                                "destinationId": "16",
+                                "id": "31",
+                                "sourceId": "6",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "examenes virtuales",
+                        "documentation": {},
+                        "id": "13",
+                        "name": "Evaluaciones",
+                        "properties": {
+                            "structurizr.dsl.identifier": "evaluaciones"
+                        },
+                        "relationships": [
+                            {
+                                "description": "lee y escribe",
+                                "destinationId": "16",
+                                "id": "29",
+                                "sourceId": "13",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "material del curso",
+                        "documentation": {},
+                        "id": "14",
+                        "name": "Material",
+                        "properties": {
+                            "structurizr.dsl.identifier": "material"
+                        },
+                        "relationships": [
+                            {
+                                "description": "lee y escribe",
+                                "destinationId": "16",
+                                "id": "30",
+                                "sourceId": "14",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Alumnos y docentes del curso",
+                        "documentation": {},
+                        "id": "15",
+                        "name": "Integrantes",
+                        "properties": {
+                            "structurizr.dsl.identifier": "integrantes"
+                        },
+                        "relationships": [
+                            {
+                                "description": "lee y escribe",
+                                "destinationId": "16",
+                                "id": "32",
+                                "sourceId": "15",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Base de datos",
+                        "documentation": {},
+                        "id": "16",
+                        "name": "Base de datos",
+                        "properties": {
+                            "structurizr.dsl.identifier": "bd"
+                        },
+                        "tags": "Element,Container,Oracle",
+                        "technology": "Oradle 19 C  1521"
+                    }
+                ],
+                "description": "Entorno virtual de colaboracion Blackboard",
+                "documentation": {},
+                "id": "4",
+                "location": "Unspecified",
+                "name": "Aula",
+                "properties": {
+                    "structurizr.dsl.identifier": "aula"
+                },
+                "relationships": [
+                    {
+                        "description": "lee info",
+                        "destinationId": "17",
+                        "id": "21",
+                        "sourceId": "4",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Software System"
+            },
+            {
+                "description": "Sistema academico",
+                "documentation": {},
+                "id": "17",
+                "location": "Unspecified",
+                "name": "Socrates",
+                "properties": {
+                    "structurizr.dsl.identifier": "socrates"
+                },
+                "tags": "Element,Software System"
+            }
+        ]
+    },
+    "name": "Aula Virtual",
+    "properties": {
+        "structurizr.dsl": "d29ya3NwYWNlICJBdWxhIFZpcnR1YWwiICJFbnRvbnJubyBkZSBjb2xhYm9yYWNpb24gYWx1bW5vIGRvY2VudGUiIHsNCg0KICAgIG1vZGVsIHsNCiAgICBhbHVtbm8gPSBwZXJzb24gICAiYWx1bW5vIiAgInVzdWFyaW8gcXVlIGNvbnN1bHRhIG1hdGVyaWFsIGRlbCBjdXJzbyINCiAgICBkb2NlbnRlID0gcGVyc29uICJkb2NlbnRlIiAgIiB1c3VhcmlvIHF1ZSBwdWJsaWNhIG1hdGVyaWFsIg0KICAgIHN1cGVydmlzb3IgPSBwZXJzb24gInN1cGVydmlzb3IiICAic3VwZXJ2aXNhIGVsIGNvbnRlbmlkbyBkZWwgYXVsYSIgICJTdXBlciINCiAgICBhdWxhICA9ICBzb2Z0d2FyZVN5c3RlbSAgIkF1bGEiICAgIkVudG9ybm8gdmlydHVhbCBkZSBjb2xhYm9yYWNpb24gQmxhY2tib2FyZCIgIHsNCiAgICAgICAgd2ViYXBwICA9IGNvbnRhaW5lciAgIkFwcCB3ZWIiICAgIkludGVyZmFzZSBkZWwgYXVsYSIgICJqYXZhIDkganNmIg0KICAgICAgICBDb2xsYWJvcmF0ZSAgPSBjb250YWluZXIgIkNvbGFib3JhdGUiICAgIlNlc2lvbiB2aXJ0dWFsIiAgIHsNCiAgICAgICAgICAgIHVsdHJhID0gY29tcG9uZW50ICAiVWx0cmEiICAiaW50ZXJmYXNlIHVsdHJhIg0KICAgICAgICAgICAgY2hhdCA9IGNvbXBvbmVudCAgIkNoYXQiICJTZXNpb24gZGUgY2hhdCINCiAgICAgICAgICAgIHBhbnRhbGxhID0gY29tcG9uZW50ICAicGFudGFsbGEiICAiQ29tcGFydGlyIHBhbnRhbGxhIg0KICAgICAgICAgICAgZW5jdWVzdGEgPSBjb21wb25lbnQgICAiZW5jdWVzdGEiICAgInJlYWxpemFyIHNvbmRlb3MiDQogICAgICAgICAgICB2aWRlbyA9IGNvbXBvbmVudCAgICAgICAidmlkZW8iICAgICAic2VzaW9uIHZpcnR1YWwiDQogICAgICAgICAgICBjb25lY3RvciAgPSBjb21wb25lbnQgICJjb25lY3RvciIgICJjb25lY3RvciBhIEJEIG9yYWNsZSINCiAgICAgICAgfQ0KICAgICAgICBFdmFsdWFjaW9uZXMgID0gY29udGFpbmVyICJFdmFsdWFjaW9uZXMiICAgIiBleGFtZW5lcyB2aXJ0dWFsZXMiDQogICAgICBNYXRlcmlhbCAgPSBjb250YWluZXIgICAiTWF0ZXJpYWwiICAgIm1hdGVyaWFsIGRlbCBjdXJzbyINCiAgICAgIEludGVncmFudGVzICA9IGNvbnRhaW5lciAgIkludGVncmFudGVzIiAgIkFsdW1ub3MgeSBkb2NlbnRlcyBkZWwgY3Vyc28gIg0KICAgICAgQkQgPSBjb250YWluZXIgICJCYXNlIGRlIGRhdG9zIiAgIkJhc2UgZGUgZGF0b3MgIiAgIk9yYWRsZSAxOSBDICAxNTIxIiAgIk9yYWNsZSINCiAgICAgICAgIA0KICAgICAgICANCiAgICAgICAgDQogICAgfQ0KICAgIHNvY3JhdGVzID0gc29mdHdhcmVTeXN0ZW0gICJTb2NyYXRlcyIgICJTaXN0ZW1hIGFjYWRlbWljbyINCiAgICANCiAgICBhbHVtbm8gLT4gYXVsYSAgICJsZWUgbWF0ZXJpYWwiDQogICAgZG9jZW50ZSAgLT4gYXVsYSAicHVibGljYSBtYXRlcmlhbCAiDQogICAgc3VwZXJ2aXNvciAtPiBhdWxhICAgInN1cGVydmlzYW5kbyINCiAgICBhdWxhIC0+IHNvY3JhdGVzICAibGVlIGluZm8iDQogICAgDQogICAgYWx1bW5vICAtPiB3ZWJhcHAgICJpbmdyZXNhIg0KICAgIGRvY2VudGUgLT4gd2ViYXBwICJpbmdyZXNhIg0KICAgICAgc3VwZXJ2aXNvciAtPiB3ZWJhcHAgImluZ3Jlc2EiDQogICAgd2ViYXBwIC0+IEV2YWx1YWNpb25lcyAgInVzYSINCiAgICB3ZWJhcHAgLT4gTWF0ZXJpYWwgICJ1c2EiDQogICAgd2ViYXBwIC0+IENvbGxhYm9yYXRlICAidXNhIg0KICAgICB3ZWJhcHAgLT4gSW50ZWdyYW50ZXMgICJ1c2EiDQogICAgIEV2YWx1YWNpb25lcyAtPiBCRCAgImxlZSB5IGVzY3JpYmUiDQogICAgIE1hdGVyaWFsIC0+IEJEICAibGVlIHkgZXNjcmliZSINCiAgICBDb2xsYWJvcmF0ZSAtPiBCRCAgImxlZSB5IGVzY3JpYmUiDQogICAgSW50ZWdyYW50ZXMgLT4gQkQgICJsZWUgeSBlc2NyaWJlIg0KICAgIA0KICAgIA0KICAgdWx0cmEgIC0+IGNoYXQgICJ1c2EiDQogICAgdWx0cmEgIC0+IHBhbnRhbGxhICAidXNhIg0KICAgIHVsdHJhICAtPiBlbmN1ZXN0YSAgInVzYSINCiAgICB1bHRyYSAgLT4gdmlkZW8gICJ1c2EiDQogICAgDQogICAgY29uZWN0b3IgLT4gQkQgICJjb25lY3RhIg0KICAgICB3ZWJhcHAgIC0+IHVsdHJhICJ1c2EiDQogICAgY2hhdCAtPiBjb25lY3RvciAidXNhIg0KICAgICAgcGFudGFsbGEgLT4gY29uZWN0b3IgInVzYSINCiAgICAgICBlbmN1ZXN0YSAtPiBjb25lY3RvciAidXNhIg0KICAgICAgICAgIHZpZGVvIC0+IGNvbmVjdG9yICJ1c2EiDQogICAgDQogICANCiAgICB9DQogICAgICAgICAgICANCiAgICAgICAgIA0KICAgICAgICAgICAgDQogICAgIHZpZXdzIHsNCiAgICAgc3lzdGVtQ29udGV4dCAgYXVsYSB7DQogICAgICAgICBpbmNsdWRlICoNCiAgICAgIA0KICAgICB9DQogICAgIGNvbnRhaW5lciAgICBhdWxhIHsNCiAgICAgICAgIGluY2x1ZGUgKg0KICAgICB9DQogICAgIA0KICAgICBjb21wb25lbnQgIENvbGxhYm9yYXRlICAgIkNvbXBvbmVudGUiew0KICAgICAgICAgIGluY2x1ZGUgKg0KICAgICB9DQogICAgIA0KICAgICANCiAgICAgc3R5bGVzIHsNCiAgICAgZWxlbWVudCAiT3JhY2xlIiB7DQogICAgICAgICAgICAgICAgc2hhcGUgIkN5bGluZGVyIiANCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjZWMwZTBlIiANCiAgICAgICAgICAgICAgICBjb2xvciAiI2ZmZmZmZiIgDQogICAgICAgICAgICB9DQogICAgIA0KICAgICBlbGVtZW50ICJTdXBlciIgew0KICAgICAgICAgICAgICAgIHNoYXBlICJSb2JvdCIgDQogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzI2Y2Y0OCIgDQogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiIA0KICAgICAgICAgICAgfQ0KICAgICANCiAgICAgfQ0KICAgICANCiAgICAgDQogICAgICAgIHRoZW1lIGRlZmF1bHQNCiAgICB9ICAgDQogICAgICAgIA0KICAgICAgICANCiAgICAgICAgDQoNCn0="
+    },
+    "views": {
+        "componentViews": [
+            {
+                "containerId": "6",
+                "dimensions": {
+                    "height": 1748,
+                    "width": 2480
+                },
+                "elements": [
+                    {
+                        "id": "5",
+                        "x": 1110,
+                        "y": 5
+                    },
+                    {
+                        "id": "7",
+                        "x": 1110,
+                        "y": 450
+                    },
+                    {
+                        "id": "8",
+                        "x": 45,
+                        "y": 860
+                    },
+                    {
+                        "id": "9",
+                        "x": 1385,
+                        "y": 870
+                    },
+                    {
+                        "id": "10",
+                        "x": 700,
+                        "y": 875
+                    },
+                    {
+                        "id": "11",
+                        "x": 1985,
+                        "y": 860
+                    },
+                    {
+                        "id": "12",
+                        "x": 1125,
+                        "y": 1415
+                    },
+                    {
+                        "id": "16",
+                        "x": 45,
+                        "y": 1405
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "key": "Componente",
+                "order": 3,
+                "paperSize": "A5_Landscape",
+                "relationships": [
+                    {
+                        "id": "33"
+                    },
+                    {
+                        "id": "34"
+                    },
+                    {
+                        "id": "35"
+                    },
+                    {
+                        "id": "36"
+                    },
+                    {
+                        "id": "37"
+                    },
+                    {
+                        "id": "38"
+                    },
+                    {
+                        "id": "39"
+                    },
+                    {
+                        "id": "40"
+                    },
+                    {
+                        "id": "41"
+                    },
+                    {
+                        "id": "42"
+                    }
+                ]
+            }
+        ],
+        "configuration": {
+            "branding": {},
+            "lastSavedView": "SystemContext-001",
+            "metadataSymbols": "SquareBrackets",
+            "styles": {
+                "elements": [
+                    {
+                        "background": "#ec0e0e",
+                        "color": "#ffffff",
+                        "shape": "Cylinder",
+                        "tag": "Oracle"
+                    },
+                    {
+                        "background": "#26cf48",
+                        "color": "#ffffff",
+                        "shape": "Robot",
+                        "tag": "Super"
+                    }
+                ]
+            },
+            "terminology": {},
+            "themes": [
+                "https://static.structurizr.com/themes/default/theme.json"
+            ]
+        },
+        "containerViews": [
+            {
+                "dimensions": {
+                    "height": 2480,
+                    "width": 3508
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 420,
+                        "y": -10
+                    },
+                    {
+                        "id": "2",
+                        "x": 2530,
+                        "y": -10
+                    },
+                    {
+                        "id": "3",
+                        "x": 1605,
+                        "y": -45
+                    },
+                    {
+                        "id": "5",
+                        "x": 1595,
+                        "y": 780
+                    },
+                    {
+                        "id": "6",
+                        "x": 2960,
+                        "y": 1410
+                    },
+                    {
+                        "id": "13",
+                        "x": 55,
+                        "y": 1420
+                    },
+                    {
+                        "id": "14",
+                        "x": 880,
+                        "y": 1400
+                    },
+                    {
+                        "id": "15",
+                        "x": 2185,
+                        "y": 1350
+                    },
+                    {
+                        "id": "16",
+                        "x": 1655,
+                        "y": 2095
+                    }
+                ],
+                "externalSoftwareSystemBoundariesVisible": false,
+                "generatedKey": true,
+                "key": "Container-001",
+                "order": 2,
+                "paperSize": "A4_Landscape",
+                "relationships": [
+                    {
+                        "id": "22"
+                    },
+                    {
+                        "id": "23"
+                    },
+                    {
+                        "id": "24"
+                    },
+                    {
+                        "id": "25"
+                    },
+                    {
+                        "id": "26"
+                    },
+                    {
+                        "id": "27"
+                    },
+                    {
+                        "id": "28"
+                    },
+                    {
+                        "id": "29"
+                    },
+                    {
+                        "id": "30"
+                    },
+                    {
+                        "id": "31"
+                    },
+                    {
+                        "id": "32"
+                    }
+                ],
+                "softwareSystemId": "4"
+            }
+        ],
+        "systemContextViews": [
+            {
+                "dimensions": {
+                    "height": 1748,
+                    "width": 2480
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 130,
+                        "y": 30
+                    },
+                    {
+                        "id": "2",
+                        "x": 1735,
+                        "y": 20
+                    },
+                    {
+                        "id": "3",
+                        "x": 1030,
+                        "y": 15
+                    },
+                    {
+                        "id": "4",
+                        "x": 965,
+                        "y": 655
+                    },
+                    {
+                        "id": "17",
+                        "x": 980,
+                        "y": 1170
+                    }
+                ],
+                "enterpriseBoundaryVisible": true,
+                "generatedKey": true,
+                "key": "SystemContext-001",
+                "order": 1,
+                "paperSize": "A5_Landscape",
+                "relationships": [
+                    {
+                        "id": "18"
+                    },
+                    {
+                        "id": "19"
+                    },
+                    {
+                        "id": "20"
+                    },
+                    {
+                        "id": "21"
+                    }
+                ],
+                "softwareSystemId": "4"
+            }
+        ]
+    }
+}
