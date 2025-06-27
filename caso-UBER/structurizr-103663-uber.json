@@ -1,0 +1,862 @@
+{
+    "configuration": {
+        "scope": "SoftwareSystem"
+    },
+    "description": "Proveedor de servicios de movilización",
+    "documentation": {},
+    "id": 103663,
+    "lastModifiedAgent": "structurizr-cloud/dsl-editor/92cf3999-b7b7-4dc4-a654-523855194db2",
+    "lastModifiedDate": "2025-06-25T01:44:16Z",
+    "lastModifiedUser": "effortgy@hotmail.com",
+    "model": {
+        "people": [
+            {
+                "description": "Usuario que toma los servicios de UBER",
+                "id": "1",
+                "location": "Unspecified",
+                "name": "Cliente",
+                "properties": {
+                    "structurizr.dsl.identifier": "cliente"
+                },
+                "relationships": [
+                    {
+                        "description": "Solicita servicios de transporte",
+                        "destinationId": "4",
+                        "id": "28",
+                        "sourceId": "1",
+                        "tags": "Relationship",
+                        "technology": "WEB"
+                    },
+                    {
+                        "description": "utiliza",
+                        "destinationId": "6",
+                        "id": "34",
+                        "sourceId": "1",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person"
+            },
+            {
+                "description": "Usuario conductor que ofrece los servicios de transporte de UBER",
+                "id": "2",
+                "location": "Unspecified",
+                "name": "Conductor",
+                "properties": {
+                    "structurizr.dsl.identifier": "conductor"
+                },
+                "relationships": [
+                    {
+                        "description": "atiende servicios de transporte",
+                        "destinationId": "4",
+                        "id": "29",
+                        "sourceId": "2",
+                        "tags": "Relationship",
+                        "technology": "WEB"
+                    },
+                    {
+                        "description": "utiliza",
+                        "destinationId": "7",
+                        "id": "35",
+                        "sourceId": "2",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person"
+            },
+            {
+                "description": "Supervisa actividades de conductores",
+                "id": "3",
+                "location": "Unspecified",
+                "name": "Operador",
+                "properties": {
+                    "structurizr.dsl.identifier": "operador"
+                },
+                "relationships": [
+                    {
+                        "description": "Monitorea estado y actividades",
+                        "destinationId": "4",
+                        "id": "30",
+                        "sourceId": "3",
+                        "tags": "Relationship",
+                        "technology": "WEB"
+                    },
+                    {
+                        "description": "utiliza",
+                        "destinationId": "5",
+                        "id": "33",
+                        "sourceId": "3",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person"
+            }
+        ],
+        "softwareSystems": [
+            {
+                "containers": [
+                    {
+                        "description": "Python",
+                        "documentation": {},
+                        "id": "5",
+                        "name": "Activación Personal",
+                        "properties": {
+                            "structurizr.dsl.identifier": "appoperadores"
+                        },
+                        "relationships": [
+                            {
+                                "description": "usa",
+                                "destinationId": "8",
+                                "id": "36",
+                                "sourceId": "5",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Java y Scala",
+                        "documentation": {},
+                        "id": "6",
+                        "name": "APP Pasajeros",
+                        "properties": {
+                            "structurizr.dsl.identifier": "apppasajeros"
+                        },
+                        "relationships": [
+                            {
+                                "description": "usa",
+                                "destinationId": "8",
+                                "id": "37",
+                                "sourceId": "6",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Java y Scala",
+                        "documentation": {},
+                        "id": "7",
+                        "name": "APP Conductores",
+                        "properties": {
+                            "structurizr.dsl.identifier": "appconductores"
+                        },
+                        "relationships": [
+                            {
+                                "description": "usa",
+                                "destinationId": "8",
+                                "id": "38",
+                                "sourceId": "7",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "8",
+                        "name": "API GATEWAY",
+                        "properties": {
+                            "structurizr.dsl.identifier": "apigw"
+                        },
+                        "relationships": [
+                            {
+                                "description": "usa",
+                                "destinationId": "9",
+                                "id": "39",
+                                "sourceId": "8",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "10",
+                                "id": "40",
+                                "sourceId": "8",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "11",
+                                "id": "41",
+                                "sourceId": "8",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "18",
+                                "id": "50",
+                                "sourceId": "8",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "17",
+                                "id": "51",
+                                "linkedRelationshipId": "50",
+                                "sourceId": "8"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Gestión demanda",
+                        "documentation": {},
+                        "id": "9",
+                        "name": "Riders",
+                        "properties": {
+                            "structurizr.dsl.identifier": "servicioriders"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena",
+                                "destinationId": "13",
+                                "id": "42",
+                                "sourceId": "9",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Gestión oferta",
+                        "documentation": {},
+                        "id": "10",
+                        "name": "Cabs",
+                        "properties": {
+                            "structurizr.dsl.identifier": "serviciocabs"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena",
+                                "destinationId": "13",
+                                "id": "43",
+                                "sourceId": "10",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Despacho operacional",
+                        "documentation": {},
+                        "id": "11",
+                        "name": "Disco",
+                        "properties": {
+                            "structurizr.dsl.identifier": "serviciodisco"
+                        },
+                        "relationships": [
+                            {
+                                "description": "utiliza",
+                                "destinationId": "12",
+                                "id": "44",
+                                "sourceId": "11",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "lee y escribe",
+                                "destinationId": "16",
+                                "id": "45",
+                                "sourceId": "11",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Indice jerárquico",
+                        "documentation": {},
+                        "id": "12",
+                        "name": "S3",
+                        "properties": {
+                            "structurizr.dsl.identifier": "servicios3"
+                        },
+                        "relationships": [
+                            {
+                                "description": "lee y escribe",
+                                "destinationId": "15",
+                                "id": "46",
+                                "sourceId": "12",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "utiliza",
+                                "destinationId": "27",
+                                "id": "49",
+                                "sourceId": "12",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "13",
+                        "name": "Kafka",
+                        "properties": {
+                            "structurizr.dsl.identifier": "apachekafka"
+                        },
+                        "relationships": [
+                            {
+                                "description": "lee y escribe",
+                                "destinationId": "14",
+                                "id": "47",
+                                "sourceId": "13",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "14",
+                        "name": "MongoDB",
+                        "properties": {
+                            "structurizr.dsl.identifier": "mongodb"
+                        },
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "15",
+                        "name": "Cassandra",
+                        "properties": {
+                            "structurizr.dsl.identifier": "cassandra"
+                        },
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "16",
+                        "name": "MySQL",
+                        "properties": {
+                            "structurizr.dsl.identifier": "mysql"
+                        },
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "components": [
+                            {
+                                "documentation": {},
+                                "id": "18",
+                                "name": "Seguimiento de API http",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log1"
+                                },
+                                "relationships": [
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "19",
+                                        "id": "52",
+                                        "sourceId": "18",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "20",
+                                        "id": "53",
+                                        "sourceId": "18",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "21",
+                                        "id": "54",
+                                        "sourceId": "18",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "22",
+                                        "id": "55",
+                                        "sourceId": "18",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "23",
+                                        "id": "56",
+                                        "sourceId": "18",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "24",
+                                        "id": "57",
+                                        "sourceId": "18",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "25",
+                                        "id": "58",
+                                        "sourceId": "18",
+                                        "tags": "Relationship"
+                                    }
+                                ],
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "19",
+                                "name": "Uso de perfil de usuarios",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log2"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "20",
+                                "name": "Recolección de feedback y comentarios",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log3"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "21",
+                                "name": "Promoción de cupones",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log4"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "22",
+                                "name": "Detección de fraude",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log5"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "23",
+                                "name": "Fraude de pagos",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log6"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "24",
+                                "name": "Abuso de conductores",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log7"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "25",
+                                "name": "Seguimiento histórico de cuentas comprometidas por hackers",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log8"
+                                },
+                                "tags": "Element,Component"
+                            }
+                        ],
+                        "documentation": {},
+                        "id": "17",
+                        "name": "seguridad",
+                        "properties": {
+                            "structurizr.dsl.identifier": "seguridad"
+                        },
+                        "tags": "Element,Container"
+                    }
+                ],
+                "description": "Servicio de transporte de pasajeros",
+                "documentation": {},
+                "id": "4",
+                "location": "Unspecified",
+                "name": "UBER",
+                "properties": {
+                    "structurizr.dsl.identifier": "uber"
+                },
+                "relationships": [
+                    {
+                        "description": "lee datos de geocalización",
+                        "destinationId": "27",
+                        "id": "32",
+                        "sourceId": "4",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Software System"
+            },
+            {
+                "description": "Paypal MasterCard Visa",
+                "documentation": {},
+                "id": "26",
+                "location": "Unspecified",
+                "name": "Servicios de Pago",
+                "properties": {
+                    "structurizr.dsl.identifier": "serviciopago"
+                },
+                "relationships": [
+                    {
+                        "description": "registra pagos",
+                        "destinationId": "4",
+                        "id": "31",
+                        "sourceId": "26",
+                        "tags": "Relationship",
+                        "technology": "WEB"
+                    },
+                    {
+                        "description": "registra pagos",
+                        "destinationId": "11",
+                        "id": "48",
+                        "sourceId": "26",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Software System"
+            },
+            {
+                "description": "Servicios de geocalización Google",
+                "documentation": {},
+                "id": "27",
+                "location": "Unspecified",
+                "name": "Google Maps",
+                "properties": {
+                    "structurizr.dsl.identifier": "serviciogoogle"
+                },
+                "tags": "Element,Software System"
+            }
+        ]
+    },
+    "name": "Caso UBER",
+    "properties": {
+        "structurizr.dsl": "d29ya3NwYWNlICJDYXNvIFVCRVIiICJQcm92ZWVkb3IgZGUgc2VydmljaW9zIGRlIG1vdmlsaXphY2nDs24iIHsKCgogICAgbW9kZWwgewogICAgICAgIGNsaWVudGUgPSBwZXJzb24gIkNsaWVudGUiICJVc3VhcmlvIHF1ZSB0b21hIGxvcyBzZXJ2aWNpb3MgZGUgVUJFUiIKICAgICAgICBjb25kdWN0b3IgPSBwZXJzb24gIkNvbmR1Y3RvciIgIlVzdWFyaW8gY29uZHVjdG9yIHF1ZSBvZnJlY2UgbG9zIHNlcnZpY2lvcyBkZSB0cmFuc3BvcnRlIGRlIFVCRVIiCiAgICAgICAgb3BlcmFkb3IgPSBwZXJzb24gIk9wZXJhZG9yIiAiU3VwZXJ2aXNhIGFjdGl2aWRhZGVzIGRlIGNvbmR1Y3RvcmVzIgogICAgICAgIHViZXIgPSBzb2Z0d2FyZVN5c3RlbSAiVUJFUiIgIlNlcnZpY2lvIGRlIHRyYW5zcG9ydGUgZGUgcGFzYWplcm9zIiB7CiAgICAgICAgICAgIGFwcE9wZXJhZG9yZXMgPSBjb250YWluZXIgIkFjdGl2YWNpw7NuIFBlcnNvbmFsIiAiUHl0aG9uIgogICAgICAgICAgICBhcHBQYXNhamVyb3MgPSBjb250YWluZXIgIkFQUCBQYXNhamVyb3MiICJKYXZhIHkgU2NhbGEiCiAgICAgICAgICAgIGFwcENvbmR1Y3RvcmVzID0gY29udGFpbmVyICJBUFAgQ29uZHVjdG9yZXMiICJKYXZhIHkgU2NhbGEiCiAgICAgICAgICAgIAogICAgICAgICAgICBhcGlHVyA9IGNvbnRhaW5lciAiQVBJIEdBVEVXQVkiCiAgICAgICAgICAgIAogICAgICAgICAgICBzZXJ2aWNpb1JpZGVycyA9IGNvbnRhaW5lciAiUmlkZXJzIiAiR2VzdGnDs24gZGVtYW5kYSIKICAgICAgICAgICAgc2VydmljaW9DYWJzID0gY29udGFpbmVyICJDYWJzIiAiR2VzdGnDs24gb2ZlcnRhIgogICAgICAgICAgICBzZXJ2aWNpb0Rpc2NvID0gY29udGFpbmVyICJEaXNjbyIgIkRlc3BhY2hvIG9wZXJhY2lvbmFsIgogICAgICAgICAgICBzZXJ2aWNpb1MzID0gY29udGFpbmVyICJTMyIgIkluZGljZSBqZXLDoXJxdWljbyIKICAgICAgICAgICAgCiAgICAgICAgICAgIGFwYWNoZUthZmthID0gY29udGFpbmVyICJLYWZrYSIKICAgICAgICAgICAgbW9uZ29EQiA9IGNvbnRhaW5lciAiTW9uZ29EQiIgCiAgICAgICAgICAgIGNhc3NhbmRyYSA9IGNvbnRhaW5lciAiQ2Fzc2FuZHJhIgogICAgICAgICAgICBteVNRTCA9IGNvbnRhaW5lciAiTXlTUUwiCiAgICAgICAgICAgIHNlZ3VyaWRhZCA9IGNvbnRhaW5lciAic2VndXJpZGFkIiB7CiAgICAgICAgICAgICAgICBsb2cxID0gY29tcG9uZW50ICJTZWd1aW1pZW50byBkZSBBUEkgaHR0cCIKICAgICAgICAgICAgICAgIGxvZzIgPSBjb21wb25lbnQgIlVzbyBkZSBwZXJmaWwgZGUgdXN1YXJpb3MiCiAgICAgICAgICAgICAgICBsb2czID0gY29tcG9uZW50ICJSZWNvbGVjY2nDs24gZGUgZmVlZGJhY2sgeSBjb21lbnRhcmlvcyIKICAgICAgICAgICAgICAgIGxvZzQgPSBjb21wb25lbnQgIlByb21vY2nDs24gZGUgY3Vwb25lcyIKICAgICAgICAgICAgICAgIGxvZzUgPSBjb21wb25lbnQgIkRldGVjY2nDs24gZGUgZnJhdWRlIgogICAgICAgICAgICAgICAgbG9nNiA9IGNvbXBvbmVudCAiRnJhdWRlIGRlIHBhZ29zIgogICAgICAgICAgICAgICAgbG9nNyA9IGNvbXBvbmVudCAiQWJ1c28gZGUgY29uZHVjdG9yZXMiCiAgICAgICAgICAgICAgICBsb2c4ID0gY29tcG9uZW50ICJTZWd1aW1pZW50byBoaXN0w7NyaWNvIGRlIGN1ZW50YXMgY29tcHJvbWV0aWRhcyBwb3IgaGFja2VycyIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBzZXJ2aWNpb1BhZ28gPSBzb2Z0d2FyZVN5c3RlbSAiU2VydmljaW9zIGRlIFBhZ28iICJQYXlwYWwgTWFzdGVyQ2FyZCBWaXNhIgogICAgICAgIHNlcnZpY2lvR29vZ2xlID0gc29mdHdhcmVTeXN0ZW0gIkdvb2dsZSBNYXBzIiAiU2VydmljaW9zIGRlIGdlb2NhbGl6YWNpw7NuIEdvb2dsZSIKICAgICAgICAKICAgICAgICAvLyBjb250ZXh0CiAgICAgICAgY2xpZW50ZSAtPiB1YmVyICJTb2xpY2l0YSBzZXJ2aWNpb3MgZGUgdHJhbnNwb3J0ZSIgIldFQiIKICAgICAgICBjb25kdWN0b3IgLT4gdWJlciAiYXRpZW5kZSBzZXJ2aWNpb3MgZGUgdHJhbnNwb3J0ZSIgIldFQiIKICAgICAgICBvcGVyYWRvciAtPiB1YmVyICJNb25pdG9yZWEgZXN0YWRvIHkgYWN0aXZpZGFkZXMiICJXRUIiCiAgICAgICAgCiAgICAgICAgc2VydmljaW9QYWdvIC0+IHViZXIgInJlZ2lzdHJhIHBhZ29zIiAiV0VCIgogICAgICAgIHViZXIgLT4gc2VydmljaW9Hb29nbGUgImxlZSBkYXRvcyBkZSBnZW9jYWxpemFjacOzbiIKICAgICAgICAKICAgICAgICAvL2NvbnRhaW5lcgogICAgICAgIG9wZXJhZG9yIC0+IGFwcE9wZXJhZG9yZXMgInV0aWxpemEiCiAgICAgICAgY2xpZW50ZSAtPiBhcHBQYXNhamVyb3MgInV0aWxpemEiCiAgICAgICAgY29uZHVjdG9yIC0+IGFwcENvbmR1Y3RvcmVzICJ1dGlsaXphIgogICAgICAgIAogICAgICAgIGFwcE9wZXJhZG9yZXMgLT4gYXBpR1cgInVzYSIKICAgICAgICBhcHBQYXNhamVyb3MgLT4gYXBpR1cgInVzYSIKICAgICAgICBhcHBDb25kdWN0b3JlcyAtPiBhcGlHVyAidXNhIgogICAgICAgIAogICAgICAgIGFwaUdXIC0+IHNlcnZpY2lvUmlkZXJzICJ1c2EiCiAgICAgICAgYXBpR1cgLT4gc2VydmljaW9DYWJzICJ1c2EiCiAgICAgICAgYXBpR1cgLT4gc2VydmljaW9EaXNjbyAidXNhIgogICAgICAgIAogICAgICAgIHNlcnZpY2lvUmlkZXJzIC0+IGFwYWNoZUthZmthICJhbG1hY2VuYSIKICAgICAgICBzZXJ2aWNpb0NhYnMgLT4gYXBhY2hlS2Fma2EgImFsbWFjZW5hIgogICAgICAgIHNlcnZpY2lvRGlzY28gLT4gc2VydmljaW9TMyAidXRpbGl6YSIKICAgICAgICBzZXJ2aWNpb0Rpc2NvIC0+IG15U1FMICJsZWUgeSBlc2NyaWJlIgogICAgICAgIHNlcnZpY2lvUzMgLT4gY2Fzc2FuZHJhICJsZWUgeSBlc2NyaWJlIgogICAgICAgIGFwYWNoZUthZmthIC0+IG1vbmdvREIgImxlZSB5IGVzY3JpYmUiCiAgICAgICAgCiAgICAgICAgc2VydmljaW9QYWdvIC0+IHNlcnZpY2lvRGlzY28gInJlZ2lzdHJhIHBhZ29zIgogICAgICAgIHNlcnZpY2lvUzMgLT4gc2VydmljaW9Hb29nbGUgInV0aWxpemEiCiAgICAgICAgCiAgICAgICAgLy9jb21wb25lbnQKICAgICAgICAKICAgICAgICBhcGlHVyAtPiBsb2cxICJ1c2EiCiAgICAgICAgbG9nMSAtPiBsb2cyICJ1c2EiCiAgICAgICAgbG9nMSAtPiBsb2czICJ1c2EiCiAgICAgICAgbG9nMSAtPiBsb2c0ICJ1c2EiCiAgICAgICAgbG9nMSAtPiBsb2c1ICJ1c2EiCiAgICAgICAgbG9nMSAtPiBsb2c2ICJ1c2EiCiAgICAgICAgbG9nMSAtPiBsb2c3ICJ1c2EiCiAgICAgICAgbG9nMSAtPiBsb2c4ICJ1c2EiCiAgICB9CiAgICAKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IHViZXIgIkNvbnRleHRvIiAiRGlhZ3JhbWEgZGUgY29udGV4dG8iIHsKICAgICAgICAgICAgaW5jbHVkZSBjbGllbnRlCiAgICAgICAgICAgIGluY2x1ZGUgY29uZHVjdG9yCiAgICAgICAgICAgIGluY2x1ZGUgb3BlcmFkb3IKICAgICAgICAgICAgaW5jbHVkZSB1YmVyCiAgICAgICAgICAgIGluY2x1ZGUgc2VydmljaW9QYWdvCiAgICAgICAgICAgIGluY2x1ZGUgc2VydmljaW9Hb29nbGUKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgY29udGFpbmVyIHViZXIgIkNvbnRlbmVkb3JlcyIgIlZpc3RhIGRlIGNvbnRlbmVkZXJvcyBVQkVSIiB7CiAgICAgICAgICAgIGluY2x1ZGUgY2xpZW50ZQogICAgICAgICAgICBpbmNsdWRlIGNvbmR1Y3RvcgogICAgICAgICAgICBpbmNsdWRlIG9wZXJhZG9yCiAgICAgICAgICAgIGluY2x1ZGUgdWJlcgogICAgICAgICAgICBpbmNsdWRlIHNlcnZpY2lvUGFnbwogICAgICAgICAgICBpbmNsdWRlIHNlcnZpY2lvR29vZ2xlCiAgICAgICAgICAgIGluY2x1ZGUgYXBwT3BlcmFkb3JlcwogICAgICAgICAgICBpbmNsdWRlIGFwcFBhc2FqZXJvcwogICAgICAgICAgICBpbmNsdWRlIGFwcENvbmR1Y3RvcmVzCiAgICAgICAgICAgIGluY2x1ZGUgYXBpR1cKICAgICAgICAgICAgaW5jbHVkZSBzZXJ2aWNpb1JpZGVycwogICAgICAgICAgICBpbmNsdWRlIHNlcnZpY2lvQ2FicwogICAgICAgICAgICBpbmNsdWRlIHNlcnZpY2lvRGlzY28KICAgICAgICAgICAgaW5jbHVkZSBzZXJ2aWNpb1MzCiAgICAgICAgICAgIGluY2x1ZGUgYXBhY2hlS2Fma2EKICAgICAgICAgICAgaW5jbHVkZSBtb25nb0RCCiAgICAgICAgICAgIGluY2x1ZGUgY2Fzc2FuZHJhCiAgICAgICAgICAgIGluY2x1ZGUgbXlTUUwKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgY29tcG9uZW50IHNlZ3VyaWRhZCAiQ29tcG9uZW50ZXMiICJWaXN0YSBkZSBjb21wb25lbnRlcyIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CiAgICAKICAgICAgICBzdHlsZXMgewogICAgICAgICAgICBlbGVtZW50ICJQZXJzb24iIHsKICAgICAgICAgICAgICAgIHNoYXBlICJQZXJzb24iCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMjMyZWNkIgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiQ29uZHVjdG9yIiB7CiAgICAgICAgICAgICAgICBzaGFwZSAiUGVyc29uIgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzM0MTJkZSIgCiAgICAgICAgICAgICAgICBjb2xvciAiI2ZmZmZmZiIgCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CiAgICAKICAgIAogICAgY29uZmlndXJhdGlvbiB7CiAgICAgICAgc2NvcGUgc29mdHdhcmVzeXN0ZW0KICAgIH0KCn0="
+    },
+    "views": {
+        "componentViews": [
+            {
+                "containerId": "17",
+                "description": "Vista de componentes",
+                "dimensions": {
+                    "height": 1748,
+                    "width": 2480
+                },
+                "elements": [
+                    {
+                        "id": "8",
+                        "x": 1025,
+                        "y": 15
+                    },
+                    {
+                        "id": "18",
+                        "x": 1000,
+                        "y": 485
+                    },
+                    {
+                        "id": "19",
+                        "x": 1990,
+                        "y": 965
+                    },
+                    {
+                        "id": "20",
+                        "x": 1020,
+                        "y": 1360
+                    },
+                    {
+                        "id": "21",
+                        "x": 85,
+                        "y": 655
+                    },
+                    {
+                        "id": "22",
+                        "x": 35,
+                        "y": 1075
+                    },
+                    {
+                        "id": "23",
+                        "x": 525,
+                        "y": 1365
+                    },
+                    {
+                        "id": "24",
+                        "x": 1560,
+                        "y": 1345
+                    },
+                    {
+                        "id": "25",
+                        "x": 1975,
+                        "y": 570
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "key": "Componentes",
+                "order": 3,
+                "paperSize": "A5_Landscape",
+                "relationships": [
+                    {
+                        "id": "50"
+                    },
+                    {
+                        "id": "52"
+                    },
+                    {
+                        "id": "53"
+                    },
+                    {
+                        "id": "54"
+                    },
+                    {
+                        "id": "55"
+                    },
+                    {
+                        "id": "56"
+                    },
+                    {
+                        "id": "57"
+                    },
+                    {
+                        "id": "58"
+                    }
+                ]
+            }
+        ],
+        "configuration": {
+            "branding": {},
+            "lastSavedView": "Contexto",
+            "metadataSymbols": "SquareBrackets",
+            "styles": {
+                "elements": [
+                    {
+                        "background": "#232ecd",
+                        "color": "#ffffff",
+                        "shape": "Person",
+                        "tag": "Person"
+                    },
+                    {
+                        "background": "#3412de",
+                        "color": "#ffffff",
+                        "shape": "Person",
+                        "tag": "Conductor"
+                    }
+                ]
+            },
+            "terminology": {}
+        },
+        "containerViews": [
+            {
+                "description": "Vista de contenederos UBER",
+                "dimensions": {
+                    "height": 2480,
+                    "width": 3508
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 870,
+                        "y": 0
+                    },
+                    {
+                        "id": "2",
+                        "x": 1545,
+                        "y": 10
+                    },
+                    {
+                        "id": "3",
+                        "x": 80,
+                        "y": 20
+                    },
+                    {
+                        "id": "5",
+                        "x": 65,
+                        "y": 540
+                    },
+                    {
+                        "id": "6",
+                        "x": 880,
+                        "y": 505
+                    },
+                    {
+                        "id": "7",
+                        "x": 1500,
+                        "y": 590
+                    },
+                    {
+                        "id": "8",
+                        "x": 860,
+                        "y": 945
+                    },
+                    {
+                        "id": "9",
+                        "x": 45,
+                        "y": 1090
+                    },
+                    {
+                        "id": "10",
+                        "x": 860,
+                        "y": 1320
+                    },
+                    {
+                        "id": "11",
+                        "x": 1915,
+                        "y": 985
+                    },
+                    {
+                        "id": "12",
+                        "x": 1395,
+                        "y": 1630
+                    },
+                    {
+                        "id": "13",
+                        "x": 110,
+                        "y": 1575
+                    },
+                    {
+                        "id": "14",
+                        "x": 80,
+                        "y": 2065
+                    },
+                    {
+                        "id": "15",
+                        "x": 780,
+                        "y": 2045
+                    },
+                    {
+                        "id": "16",
+                        "x": 1875,
+                        "y": 2070
+                    },
+                    {
+                        "id": "26",
+                        "x": 2645,
+                        "y": 545
+                    },
+                    {
+                        "id": "27",
+                        "x": 2650,
+                        "y": 1675
+                    }
+                ],
+                "externalSoftwareSystemBoundariesVisible": false,
+                "key": "Contenedores",
+                "order": 2,
+                "paperSize": "A4_Landscape",
+                "relationships": [
+                    {
+                        "id": "33"
+                    },
+                    {
+                        "id": "34"
+                    },
+                    {
+                        "id": "35"
+                    },
+                    {
+                        "id": "36"
+                    },
+                    {
+                        "id": "37"
+                    },
+                    {
+                        "id": "38"
+                    },
+                    {
+                        "id": "39"
+                    },
+                    {
+                        "id": "40"
+                    },
+                    {
+                        "id": "41"
+                    },
+                    {
+                        "id": "42"
+                    },
+                    {
+                        "id": "43"
+                    },
+                    {
+                        "id": "44"
+                    },
+                    {
+                        "id": "45"
+                    },
+                    {
+                        "id": "46"
+                    },
+                    {
+                        "id": "47"
+                    },
+                    {
+                        "id": "48"
+                    },
+                    {
+                        "id": "49"
+                    }
+                ],
+                "softwareSystemId": "4"
+            }
+        ],
+        "systemContextViews": [
+            {
+                "description": "Diagrama de contexto",
+                "dimensions": {
+                    "height": 1848,
+                    "width": 2580
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 454,
+                        "y": 155
+                    },
+                    {
+                        "id": "2",
+                        "x": 1179,
+                        "y": 160
+                    },
+                    {
+                        "id": "3",
+                        "x": 1919,
+                        "y": 180
+                    },
+                    {
+                        "id": "4",
+                        "x": 1150,
+                        "y": 870
+                    },
+                    {
+                        "id": "26",
+                        "x": 214,
+                        "y": 870
+                    },
+                    {
+                        "id": "27",
+                        "x": 1914,
+                        "y": 1295
+                    }
+                ],
+                "enterpriseBoundaryVisible": true,
+                "key": "Contexto",
+                "order": 1,
+                "relationships": [
+                    {
+                        "id": "28"
+                    },
+                    {
+                        "id": "29"
+                    },
+                    {
+                        "id": "30"
+                    },
+                    {
+                        "id": "31"
+                    },
+                    {
+                        "id": "32"
+                    }
+                ],
+                "softwareSystemId": "4"
+            }
+        ]
+    }
+}
