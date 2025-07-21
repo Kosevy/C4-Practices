@@ -1,0 +1,581 @@
+{
+    "configuration": {},
+    "description": "Control de incidentes medioambientales",
+    "documentation": {},
+    "id": 103400,
+    "lastModifiedAgent": "structurizr-cloud/diagram-editor/425827cc-c2de-4b36-8b5c-e3c3a7d10a08",
+    "lastModifiedDate": "2025-06-21T14:40:07Z",
+    "lastModifiedUser": "effortgy@hotmail.com",
+    "model": {
+        "people": [
+            {
+                "description": "Representa legalmente a la empresa",
+                "id": "1",
+                "location": "Unspecified",
+                "name": "Representante Legal",
+                "properties": {
+                    "structurizr.dsl.identifier": "representantelegal"
+                },
+                "relationships": [
+                    {
+                        "description": "Autoriza",
+                        "destinationId": "12",
+                        "id": "23",
+                        "sourceId": "1",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "Encargado de representar legalmente a empresa",
+                        "destinationId": "4",
+                        "id": "28",
+                        "sourceId": "1",
+                        "tags": "Relationship",
+                        "technology": "WEB"
+                    }
+                ],
+                "tags": "Element,Person,Representante"
+            },
+            {
+                "description": "Supervisa el incidente",
+                "id": "2",
+                "location": "Unspecified",
+                "name": "Supervisor",
+                "properties": {
+                    "structurizr.dsl.identifier": "supervisor"
+                },
+                "relationships": [
+                    {
+                        "description": "Actualiza",
+                        "destinationId": "12",
+                        "id": "22",
+                        "sourceId": "2",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "Reporta incidente accidente",
+                        "destinationId": "4",
+                        "id": "29",
+                        "sourceId": "2",
+                        "tags": "Relationship",
+                        "technology": "Web"
+                    }
+                ],
+                "tags": "Element,Person,Supervisor"
+            },
+            {
+                "description": "Medico que atiende accidente",
+                "id": "3",
+                "location": "Unspecified",
+                "name": "Medico Tratante",
+                "properties": {
+                    "structurizr.dsl.identifier": "medicotratante"
+                },
+                "relationships": [
+                    {
+                        "description": "Atiende accidente",
+                        "destinationId": "4",
+                        "id": "16",
+                        "sourceId": "3",
+                        "tags": "Relationship",
+                        "technology": "Web"
+                    },
+                    {
+                        "description": "Autoriza",
+                        "destinationId": "12",
+                        "id": "21",
+                        "sourceId": "3",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person,Medico"
+            }
+        ],
+        "softwareSystems": [
+            {
+                "containers": [
+                    {
+                        "description": "Base de datos",
+                        "documentation": {},
+                        "id": "5",
+                        "name": "BD",
+                        "properties": {
+                            "structurizr.dsl.identifier": "qshe.bd"
+                        },
+                        "tags": "Element,Container,Oracle",
+                        "technology": "Oracle 12C 1521"
+                    },
+                    {
+                        "components": [
+                            {
+                                "documentation": {},
+                                "id": "7",
+                                "name": "Motor de flujo",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "qshe.servidorapps.motordeflujo"
+                                },
+                                "tags": "Element,Component,Componente",
+                                "technology": "Java  EE"
+                            },
+                            {
+                                "description": "Formularios",
+                                "documentation": {},
+                                "id": "8",
+                                "name": "Gestor de Formularios",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "qshe.servidorapps.gestordeformularios"
+                                },
+                                "tags": "Element,Component,Componente",
+                                "technology": "Java JEE"
+                            },
+                            {
+                                "description": "WS Incidente",
+                                "documentation": {},
+                                "id": "9",
+                                "name": "Web Service",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "qshe.servidorapps.webservice"
+                                },
+                                "tags": "Element,Component,rest",
+                                "technology": "REST"
+                            },
+                            {
+                                "description": "OEFA-OSINERGMIN",
+                                "documentation": {},
+                                "id": "10",
+                                "name": "Conector Externo",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "qshe.servidorapps.conectorexterno"
+                                },
+                                "tags": "Element,Component,Componente"
+                            },
+                            {
+                                "description": "Conector BD",
+                                "documentation": {},
+                                "id": "11",
+                                "name": "Conector BD",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "qshe.servidorapps.conectorbd"
+                                },
+                                "tags": "Element,Component,Componente"
+                            }
+                        ],
+                        "description": "Wildlfy 18",
+                        "documentation": {},
+                        "id": "6",
+                        "name": "Servidor Apps",
+                        "properties": {
+                            "structurizr.dsl.identifier": "qshe.servidorapps"
+                        },
+                        "relationships": [
+                            {
+                                "description": "Lee y escribe",
+                                "destinationId": "5",
+                                "id": "20",
+                                "sourceId": "6",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "actualiza",
+                                "destinationId": "15",
+                                "id": "24",
+                                "sourceId": "6",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "Actualiza",
+                                "destinationId": "14",
+                                "id": "25",
+                                "sourceId": "6",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container,Wildlfy",
+                        "technology": "JEE 8080"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "12",
+                        "name": "WebAPP",
+                        "properties": {
+                            "structurizr.dsl.identifier": "qshe.webapp"
+                        },
+                        "relationships": [
+                            {
+                                "description": "Actualiza",
+                                "destinationId": "6",
+                                "id": "27",
+                                "sourceId": "12",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    }
+                ],
+                "description": "Sistema de Calidad, Seguridad, Medioambiente",
+                "documentation": {},
+                "id": "4",
+                "location": "Unspecified",
+                "name": "QSHE",
+                "properties": {
+                    "structurizr.dsl.identifier": "qshe"
+                },
+                "relationships": [
+                    {
+                        "description": "reporta",
+                        "destinationId": "14",
+                        "id": "18",
+                        "sourceId": "4",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "reporta",
+                        "destinationId": "15",
+                        "id": "19",
+                        "sourceId": "4",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Software System,QSHE"
+            },
+            {
+                "description": "Control se seguridad industrial",
+                "documentation": {},
+                "id": "13",
+                "location": "Unspecified",
+                "name": "Sistema de control de Riesgos Industriales",
+                "properties": {
+                    "structurizr.dsl.identifier": "sistemadecontrolderiesgosindustriales"
+                },
+                "relationships": [
+                    {
+                        "description": "Actgualiza y hace seguimiento",
+                        "destinationId": "4",
+                        "id": "17",
+                        "sourceId": "13",
+                        "tags": "Relationship",
+                        "technology": "WEB"
+                    },
+                    {
+                        "description": "lee y actualiza",
+                        "destinationId": "6",
+                        "id": "26",
+                        "sourceId": "13",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Software System,SEGURIDAD"
+            },
+            {
+                "description": "Sistema de reporte de incidentes accidentes",
+                "documentation": {},
+                "id": "14",
+                "location": "Unspecified",
+                "name": "OEFA",
+                "properties": {
+                    "structurizr.dsl.identifier": "oefa"
+                },
+                "tags": "Element,Software System,OEFA"
+            },
+            {
+                "description": "Supervisor",
+                "documentation": {},
+                "id": "15",
+                "location": "Unspecified",
+                "name": "OSINERGMIN",
+                "properties": {
+                    "structurizr.dsl.identifier": "osinergmin"
+                },
+                "tags": "Element,Software System,OSINERGMIN"
+            }
+        ]
+    },
+    "name": "Sistema QSHE",
+    "properties": {
+        "structurizr.dsl": "d29ya3NwYWNlICJTaXN0ZW1hIFFTSEUiICJDb250cm9sIGRlIGluY2lkZW50ZXMgbWVkaW9hbWJpZW50YWxlcyIgew0KDQogICAgIWltcGxpZWRSZWxhdGlvbnNoaXBzICJmYWxzZSIgDQogICAgIWlkZW50aWZpZXJzICJoaWVyYXJjaGljYWwiIA0KDQogICAgbW9kZWwgew0KICAgICAgICBSZXByZXNlbnRhbnRlTGVnYWwgPSBwZXJzb24gIlJlcHJlc2VudGFudGUgTGVnYWwiICJSZXByZXNlbnRhIGxlZ2FsbWVudGUgYSBsYSBlbXByZXNhIiAiUmVwcmVzZW50YW50ZSIgDQogICAgICAgIFN1cGVydmlzb3IgPSBwZXJzb24gIlN1cGVydmlzb3IiICJTdXBlcnZpc2EgZWwgaW5jaWRlbnRlIiAiU3VwZXJ2aXNvciIgDQogICAgICAgIE1lZGljb1RyYXRhbnRlID0gcGVyc29uICJNZWRpY28gVHJhdGFudGUiICJNZWRpY28gcXVlIGF0aWVuZGUgYWNjaWRlbnRlIiAiTWVkaWNvIiANCiAgICAgICAgUVNIRSA9IHNvZnR3YXJlU3lzdGVtICJRU0hFIiAiU2lzdGVtYSBkZSBDYWxpZGFkLCBTZWd1cmlkYWQsIE1lZGlvYW1iaWVudGUiICJRU0hFIiB7DQogICAgICAgICAgICBCRCA9IGNvbnRhaW5lciAiQkQiICJCYXNlIGRlIGRhdG9zIiAiT3JhY2xlIDEyQyAxNTIxIiAiT3JhY2xlIiANCiAgICAgICAgICAgIFNlcnZpZG9yQXBwcyA9IGNvbnRhaW5lciAiU2Vydmlkb3IgQXBwcyIgIldpbGRsZnkgMTgiICJKRUUgODA4MCIgIldpbGRsZnkiIHsNCiAgICAgICAgICAgICAgICBNb3RvcmRlZmx1am8gPSBjb21wb25lbnQgIk1vdG9yIGRlIGZsdWpvIiAiIiAiSmF2YSAgRUUiICJDb21wb25lbnRlIiANCiAgICAgICAgICAgICAgICBHZXN0b3JkZUZvcm11bGFyaW9zID0gY29tcG9uZW50ICJHZXN0b3IgZGUgRm9ybXVsYXJpb3MiICJGb3JtdWxhcmlvcyIgIkphdmEgSkVFIiAiQ29tcG9uZW50ZSIgDQogICAgICAgICAgICAgICAgV2ViU2VydmljZSA9IGNvbXBvbmVudCAiV2ViIFNlcnZpY2UiICJXUyBJbmNpZGVudGUiICJSRVNUIiAicmVzdCIgDQogICAgICAgICAgICAgICAgQ29uZWN0b3JFeHRlcm5vID0gY29tcG9uZW50ICJDb25lY3RvciBFeHRlcm5vIiAiT0VGQS1PU0lORVJHTUlOIiAiIiAiQ29tcG9uZW50ZSIgDQogICAgICAgICAgICAgICAgQ29uZWN0b3JCRCA9IGNvbXBvbmVudCAiQ29uZWN0b3IgQkQiICJDb25lY3RvciBCRCIgIiIgIkNvbXBvbmVudGUiIA0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgV2ViQVBQID0gY29udGFpbmVyICJXZWJBUFAiIA0KICAgICAgICB9DQogICAgICAgIFNpc3RlbWFkZWNvbnRyb2xkZVJpZXNnb3NJbmR1c3RyaWFsZXMgPSBzb2Z0d2FyZVN5c3RlbSAiU2lzdGVtYSBkZSBjb250cm9sIGRlIFJpZXNnb3MgSW5kdXN0cmlhbGVzIiAiQ29udHJvbCBzZSBzZWd1cmlkYWQgaW5kdXN0cmlhbCIgIlNFR1VSSURBRCIgDQogICAgICAgIE9FRkEgPSBzb2Z0d2FyZVN5c3RlbSAiT0VGQSIgIlNpc3RlbWEgZGUgcmVwb3J0ZSBkZSBpbmNpZGVudGVzIGFjY2lkZW50ZXMiICJPRUZBIiANCiAgICAgICAgT1NJTkVSR01JTiA9IHNvZnR3YXJlU3lzdGVtICJPU0lORVJHTUlOIiAiU3VwZXJ2aXNvciIgIk9TSU5FUkdNSU4iIA0KICAgICAgICBNZWRpY29UcmF0YW50ZSAtPiBRU0hFICJBdGllbmRlIGFjY2lkZW50ZSIgIldlYiIgDQogICAgICAgIFNpc3RlbWFkZWNvbnRyb2xkZVJpZXNnb3NJbmR1c3RyaWFsZXMgLT4gUVNIRSAiQWN0Z3VhbGl6YSB5IGhhY2Ugc2VndWltaWVudG8iICJXRUIiIA0KICAgICAgICBRU0hFIC0+IE9FRkEgInJlcG9ydGEiIA0KICAgICAgICBRU0hFIC0+IE9TSU5FUkdNSU4gInJlcG9ydGEiIA0KICAgICAgICBRU0hFLlNlcnZpZG9yQXBwcyAtPiBRU0hFLkJEICJMZWUgeSBlc2NyaWJlIiANCiAgICAgICAgTWVkaWNvVHJhdGFudGUgLT4gUVNIRS5XZWJBUFAgIkF1dG9yaXphIiANCiAgICAgICAgU3VwZXJ2aXNvciAtPiBRU0hFLldlYkFQUCAiQWN0dWFsaXphIiANCiAgICAgICAgUmVwcmVzZW50YW50ZUxlZ2FsIC0+IFFTSEUuV2ViQVBQICJBdXRvcml6YSIgDQogICAgICAgIFFTSEUuU2Vydmlkb3JBcHBzIC0+IE9TSU5FUkdNSU4gImFjdHVhbGl6YSIgDQogICAgICAgIFFTSEUuU2Vydmlkb3JBcHBzIC0+IE9FRkEgIkFjdHVhbGl6YSIgDQogICAgICAgIFNpc3RlbWFkZWNvbnRyb2xkZVJpZXNnb3NJbmR1c3RyaWFsZXMgLT4gUVNIRS5TZXJ2aWRvckFwcHMgImxlZSB5IGFjdHVhbGl6YSIgDQogICAgICAgIFFTSEUuV2ViQVBQIC0+IFFTSEUuU2Vydmlkb3JBcHBzICJBY3R1YWxpemEiIA0KICAgICAgICBSZXByZXNlbnRhbnRlTGVnYWwgLT4gUVNIRSAiRW5jYXJnYWRvIGRlIHJlcHJlc2VudGFyIGxlZ2FsbWVudGUgYSBlbXByZXNhIiAiV0VCIiANCiAgICAgICAgU3VwZXJ2aXNvciAtPiBRU0hFICJSZXBvcnRhIGluY2lkZW50ZSBhY2NpZGVudGUiICJXZWIiIA0KICAgIH0NCg0KICAgIHZpZXdzIHsNCiAgICAgICAgc3lzdGVtQ29udGV4dCBRU0hFICJDb250ZXh0byIgIkRpYWdyYW1hIGRlIGNvbnRleHRvIiB7DQogICAgICAgICAgICBpbmNsdWRlIFJlcHJlc2VudGFudGVMZWdhbCANCiAgICAgICAgICAgIGluY2x1ZGUgU3VwZXJ2aXNvciANCiAgICAgICAgICAgIGluY2x1ZGUgTWVkaWNvVHJhdGFudGUgDQogICAgICAgICAgICBpbmNsdWRlIFFTSEUgDQogICAgICAgICAgICBpbmNsdWRlIFNpc3RlbWFkZWNvbnRyb2xkZVJpZXNnb3NJbmR1c3RyaWFsZXMgDQogICAgICAgICAgICBpbmNsdWRlIE9FRkEgDQogICAgICAgICAgICBpbmNsdWRlIE9TSU5FUkdNSU4gDQogICAgICAgIH0NCg0KICAgICAgICBjb250YWluZXIgUVNIRSAiQ29udGVuZWRvcmVzIiAiVmlzdGEgZGUgY29udGVuZWRvcmVzIFFTSEUiIHsNCiAgICAgICAgICAgIGluY2x1ZGUgUmVwcmVzZW50YW50ZUxlZ2FsIA0KICAgICAgICAgICAgaW5jbHVkZSBRU0hFLkJEIA0KICAgICAgICAgICAgaW5jbHVkZSBRU0hFLlNlcnZpZG9yQXBwcyANCiAgICAgICAgICAgIGluY2x1ZGUgU3VwZXJ2aXNvciANCiAgICAgICAgICAgIGluY2x1ZGUgUVNIRS5XZWJBUFAgDQogICAgICAgICAgICBpbmNsdWRlIE1lZGljb1RyYXRhbnRlIA0KICAgICAgICAgICAgaW5jbHVkZSBTaXN0ZW1hZGVjb250cm9sZGVSaWVzZ29zSW5kdXN0cmlhbGVzIA0KICAgICAgICAgICAgaW5jbHVkZSBPRUZBIA0KICAgICAgICAgICAgaW5jbHVkZSBPU0lORVJHTUlOIA0KICAgICAgICB9DQoNCiAgICAgICAgY29tcG9uZW50IFFTSEUuQkQgIkNvbXBvbmVudGUiIHsNCiAgICAgICAgICAgIGluY2x1ZGUgUmVwcmVzZW50YW50ZUxlZ2FsIA0KICAgICAgICAgICAgaW5jbHVkZSBTdXBlcnZpc29yIA0KICAgICAgICAgICAgaW5jbHVkZSBRU0hFLldlYkFQUCANCiAgICAgICAgICAgIGluY2x1ZGUgTWVkaWNvVHJhdGFudGUgDQogICAgICAgICAgICBpbmNsdWRlIFFTSEUuU2Vydmlkb3JBcHBzLk1vdG9yZGVmbHVqbyANCiAgICAgICAgICAgIGluY2x1ZGUgUVNIRS5TZXJ2aWRvckFwcHMuR2VzdG9yZGVGb3JtdWxhcmlvcyANCiAgICAgICAgICAgIGluY2x1ZGUgUVNIRS5TZXJ2aWRvckFwcHMuV2ViU2VydmljZSANCiAgICAgICAgICAgIGluY2x1ZGUgUVNIRS5TZXJ2aWRvckFwcHMuQ29uZWN0b3JFeHRlcm5vIA0KICAgICAgICAgICAgaW5jbHVkZSBRU0hFLlNlcnZpZG9yQXBwcy5Db25lY3RvckJEIA0KICAgICAgICAgICAgaW5jbHVkZSBTaXN0ZW1hZGVjb250cm9sZGVSaWVzZ29zSW5kdXN0cmlhbGVzIA0KICAgICAgICAgICAgaW5jbHVkZSBPRUZBIA0KICAgICAgICAgICAgaW5jbHVkZSBPU0lORVJHTUlOIA0KICAgICAgICB9DQoNCiAgICAgICAgc3R5bGVzIHsNCiAgICAgICAgICAgIGVsZW1lbnQgIk1lZGljbyIgew0KICAgICAgICAgICAgICAgIHNoYXBlICJQZXJzb24iIA0KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIiMyNmNmNDgiIA0KICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIiANCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIk9yYWNsZSIgew0KICAgICAgICAgICAgICAgIHNoYXBlICJDeWxpbmRlciIgDQogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiI2VjMGUwZSIgDQogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiIA0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7DQogICAgICAgICAgICAgICAgc2hhcGUgIlBlcnNvbiIgDQogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzIzMmVjZCIgDQogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiIA0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZWxlbWVudCAiUVNIRSIgew0KICAgICAgICAgICAgICAgIHNoYXBlICJSb3VuZGVkQm94IiANCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjZDQ5ODE2IiANCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIlJlcHJlc2VudGFudGUiIHsNCiAgICAgICAgICAgICAgICBzaGFwZSAiUGVyc29uIiANCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMzQxMmRlIiANCiAgICAgICAgICAgICAgICBjb2xvciAiI2ZmZmZmZiIgDQogICAgICAgICAgICB9DQogICAgICAgIH0NCg0KICAgIH0NCg0KfQ=="
+    },
+    "views": {
+        "componentViews": [
+            {
+                "containerId": "5",
+                "dimensions": {
+                    "height": 1748,
+                    "width": 2480
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 300,
+                        "y": -80
+                    },
+                    {
+                        "id": "2",
+                        "x": 850,
+                        "y": -80
+                    },
+                    {
+                        "id": "3",
+                        "x": 1440,
+                        "y": -90
+                    },
+                    {
+                        "id": "7",
+                        "x": 1765,
+                        "y": 1270
+                    },
+                    {
+                        "id": "8",
+                        "x": 85,
+                        "y": 700
+                    },
+                    {
+                        "id": "9",
+                        "x": 645,
+                        "y": 1285
+                    },
+                    {
+                        "id": "10",
+                        "x": 1705,
+                        "y": 840
+                    },
+                    {
+                        "id": "11",
+                        "x": 1645,
+                        "y": 465
+                    },
+                    {
+                        "id": "12",
+                        "x": 865,
+                        "y": 580
+                    },
+                    {
+                        "id": "13",
+                        "x": 105,
+                        "y": 1255
+                    },
+                    {
+                        "id": "14",
+                        "x": 1200,
+                        "y": 1290
+                    },
+                    {
+                        "id": "15",
+                        "x": 845,
+                        "y": 910
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "key": "Componente",
+                "order": 3,
+                "paperSize": "A5_Landscape",
+                "relationships": [
+                    {
+                        "id": "21"
+                    },
+                    {
+                        "id": "22"
+                    },
+                    {
+                        "id": "23"
+                    }
+                ]
+            }
+        ],
+        "configuration": {
+            "branding": {},
+            "lastSavedView": "Contexto",
+            "metadataSymbols": "SquareBrackets",
+            "styles": {
+                "elements": [
+                    {
+                        "background": "#26cf48",
+                        "color": "#ffffff",
+                        "shape": "Person",
+                        "tag": "Medico"
+                    },
+                    {
+                        "background": "#ec0e0e",
+                        "color": "#ffffff",
+                        "shape": "Cylinder",
+                        "tag": "Oracle"
+                    },
+                    {
+                        "background": "#232ecd",
+                        "color": "#ffffff",
+                        "shape": "Person",
+                        "tag": "Person"
+                    },
+                    {
+                        "background": "#d49816",
+                        "shape": "RoundedBox",
+                        "tag": "QSHE"
+                    },
+                    {
+                        "background": "#3412de",
+                        "color": "#ffffff",
+                        "shape": "Person",
+                        "tag": "Representante"
+                    }
+                ]
+            },
+            "terminology": {}
+        },
+        "containerViews": [
+            {
+                "description": "Vista de contenedores QSHE",
+                "dimensions": {
+                    "height": 1748,
+                    "width": 2480
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 1145,
+                        "y": -85
+                    },
+                    {
+                        "id": "2",
+                        "x": 390,
+                        "y": -45
+                    },
+                    {
+                        "id": "3",
+                        "x": 1660,
+                        "y": -70
+                    },
+                    {
+                        "id": "5",
+                        "x": 1120,
+                        "y": 1250
+                    },
+                    {
+                        "id": "6",
+                        "x": 1105,
+                        "y": 820
+                    },
+                    {
+                        "id": "12",
+                        "x": 1110,
+                        "y": 395
+                    },
+                    {
+                        "id": "13",
+                        "x": 265,
+                        "y": 830
+                    },
+                    {
+                        "id": "14",
+                        "x": 1750,
+                        "y": 1235
+                    },
+                    {
+                        "id": "15",
+                        "x": 495,
+                        "y": 1235
+                    }
+                ],
+                "externalSoftwareSystemBoundariesVisible": false,
+                "key": "Contenedores",
+                "order": 2,
+                "paperSize": "A5_Landscape",
+                "relationships": [
+                    {
+                        "id": "20"
+                    },
+                    {
+                        "id": "21"
+                    },
+                    {
+                        "id": "22"
+                    },
+                    {
+                        "id": "23"
+                    },
+                    {
+                        "id": "24"
+                    },
+                    {
+                        "id": "25"
+                    },
+                    {
+                        "id": "26"
+                    },
+                    {
+                        "id": "27"
+                    }
+                ],
+                "softwareSystemId": "4"
+            }
+        ],
+        "systemContextViews": [
+            {
+                "description": "Diagrama de contexto",
+                "dimensions": {
+                    "height": 1748,
+                    "width": 2480
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 1035,
+                        "y": 20
+                    },
+                    {
+                        "id": "2",
+                        "x": 315,
+                        "y": 20
+                    },
+                    {
+                        "id": "3",
+                        "x": 1690,
+                        "y": 50
+                    },
+                    {
+                        "id": "4",
+                        "x": 1055,
+                        "y": 735
+                    },
+                    {
+                        "id": "13",
+                        "x": 185,
+                        "y": 740
+                    },
+                    {
+                        "id": "14",
+                        "x": 1425,
+                        "y": 1365
+                    },
+                    {
+                        "id": "15",
+                        "x": 725,
+                        "y": 1355
+                    }
+                ],
+                "enterpriseBoundaryVisible": true,
+                "key": "Contexto",
+                "order": 1,
+                "paperSize": "A5_Landscape",
+                "relationships": [
+                    {
+                        "id": "16"
+                    },
+                    {
+                        "id": "17"
+                    },
+                    {
+                        "id": "18"
+                    },
+                    {
+                        "id": "19"
+                    },
+                    {
+                        "id": "28"
+                    },
+                    {
+                        "id": "29"
+                    }
+                ],
+                "softwareSystemId": "4"
+            }
+        ]
+    }
+}
