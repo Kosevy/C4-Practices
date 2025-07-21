@@ -1,0 +1,846 @@
+{
+    "configuration": {},
+    "description": "Pedidos de Comestibles",
+    "documentation": {},
+    "id": 103925,
+    "lastModifiedAgent": "structurizr-cloud/dsl-editor/1a2e4c4c-f142-46ef-90f5-f43629a313b1",
+    "lastModifiedDate": "2025-06-27T15:35:53Z",
+    "lastModifiedUser": "effortgy@hotmail.com",
+    "model": {
+        "people": [
+            {
+                "description": "Solicita servicios de delivery",
+                "id": "1",
+                "location": "Unspecified",
+                "name": "Cliente",
+                "properties": {
+                    "structurizr.dsl.identifier": "cliente"
+                },
+                "relationships": [
+                    {
+                        "description": "Solicita productos",
+                        "destinationId": "5",
+                        "id": "27",
+                        "sourceId": "1",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "utiliza",
+                        "destinationId": "7",
+                        "id": "33",
+                        "sourceId": "1",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person,Cliente"
+            },
+            {
+                "description": "Transporta productos solicitados",
+                "id": "2",
+                "location": "Unspecified",
+                "name": "Conductor",
+                "properties": {
+                    "structurizr.dsl.identifier": "conductor"
+                },
+                "relationships": [
+                    {
+                        "description": "Recibe y entrega pedidos",
+                        "destinationId": "5",
+                        "id": "28",
+                        "sourceId": "2",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "utiliza",
+                        "destinationId": "8",
+                        "id": "34",
+                        "sourceId": "2",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person,Conductor"
+            },
+            {
+                "description": "Empleado encargado de enrolar y verificar a conductores, y brindar soporte.",
+                "id": "3",
+                "location": "Unspecified",
+                "name": "Operador",
+                "properties": {
+                    "structurizr.dsl.identifier": "operador"
+                },
+                "relationships": [
+                    {
+                        "description": "Gestionan enrolamiento y soporte",
+                        "destinationId": "5",
+                        "id": "29",
+                        "sourceId": "3",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person,Operador"
+            },
+            {
+                "description": "Abastece los pedidos",
+                "id": "4",
+                "location": "Unspecified",
+                "name": "Aliado",
+                "properties": {
+                    "structurizr.dsl.identifier": "aliado"
+                },
+                "relationships": [
+                    {
+                        "description": "Prepara y entrega el pedido al conductor",
+                        "destinationId": "5",
+                        "id": "30",
+                        "sourceId": "4",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "utiliza",
+                        "destinationId": "6",
+                        "id": "35",
+                        "sourceId": "4",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Person,Aliado"
+            }
+        ],
+        "softwareSystems": [
+            {
+                "containers": [
+                    {
+                        "description": "Java y Scala",
+                        "documentation": {},
+                        "id": "6",
+                        "name": "Gestion de TURBO",
+                        "properties": {
+                            "structurizr.dsl.identifier": "gestionturbo"
+                        },
+                        "relationships": [
+                            {
+                                "description": "usa",
+                                "destinationId": "9",
+                                "id": "36",
+                                "sourceId": "6",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Java y Scala",
+                        "documentation": {},
+                        "id": "7",
+                        "name": "AppClientes",
+                        "properties": {
+                            "structurizr.dsl.identifier": "appclientes"
+                        },
+                        "relationships": [
+                            {
+                                "description": "usa",
+                                "destinationId": "9",
+                                "id": "37",
+                                "sourceId": "7",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "description": "Java y Scala",
+                        "documentation": {},
+                        "id": "8",
+                        "name": "AppConductores",
+                        "properties": {
+                            "structurizr.dsl.identifier": "appconductores"
+                        },
+                        "relationships": [
+                            {
+                                "description": "usa",
+                                "destinationId": "9",
+                                "id": "38",
+                                "sourceId": "8",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "9",
+                        "name": "API GATEWAY",
+                        "properties": {
+                            "structurizr.dsl.identifier": "apigw"
+                        },
+                        "relationships": [
+                            {
+                                "description": "usa",
+                                "destinationId": "10",
+                                "id": "39",
+                                "sourceId": "9",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "19",
+                                "id": "40",
+                                "sourceId": "9",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "20",
+                                "id": "41",
+                                "sourceId": "9",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "21",
+                                "id": "42",
+                                "sourceId": "9",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "usa",
+                                "destinationId": "11",
+                                "id": "49",
+                                "sourceId": "9",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "components": [
+                            {
+                                "documentation": {},
+                                "id": "11",
+                                "name": "Hacer un pedido",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log1"
+                                },
+                                "relationships": [
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "12",
+                                        "id": "50",
+                                        "sourceId": "11",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "13",
+                                        "id": "51",
+                                        "sourceId": "11",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "14",
+                                        "id": "52",
+                                        "sourceId": "11",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "15",
+                                        "id": "53",
+                                        "sourceId": "11",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "16",
+                                        "id": "54",
+                                        "sourceId": "11",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "17",
+                                        "id": "55",
+                                        "sourceId": "11",
+                                        "tags": "Relationship"
+                                    },
+                                    {
+                                        "description": "usa",
+                                        "destinationId": "18",
+                                        "id": "56",
+                                        "sourceId": "11",
+                                        "tags": "Relationship"
+                                    }
+                                ],
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "12",
+                                "name": "Limite de tiempo",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log2"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "13",
+                                "name": "Catalogo de productos demandados",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log3"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "14",
+                                "name": "Disponibilidad de servicio",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log4"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "15",
+                                "name": "Carrito de compras",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log5"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "16",
+                                "name": "Disposición de conductor",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log6"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "17",
+                                "name": "Costo de tarifa",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log7"
+                                },
+                                "tags": "Element,Component"
+                            },
+                            {
+                                "documentation": {},
+                                "id": "18",
+                                "name": "Nivel de responsabilidad",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "log8"
+                                },
+                                "tags": "Element,Component"
+                            }
+                        ],
+                        "documentation": {},
+                        "id": "10",
+                        "name": "Servicio TURBO",
+                        "properties": {
+                            "structurizr.dsl.identifier": "servicioturbo"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena información",
+                                "destinationId": "23",
+                                "id": "44",
+                                "sourceId": "10",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "19",
+                        "name": "Servicio de Despacho",
+                        "properties": {
+                            "structurizr.dsl.identifier": "serviciodespacho"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena información",
+                                "destinationId": "23",
+                                "id": "43",
+                                "sourceId": "19",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "20",
+                        "name": "Canalizar Pago",
+                        "properties": {
+                            "structurizr.dsl.identifier": "serviciopago"
+                        },
+                        "relationships": [
+                            {
+                                "description": "guarda información",
+                                "destinationId": "24",
+                                "id": "45",
+                                "sourceId": "20",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "21",
+                        "name": "Servicio de Cache",
+                        "properties": {
+                            "structurizr.dsl.identifier": "serviciocache"
+                        },
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "22",
+                        "name": "Active MQ",
+                        "properties": {
+                            "structurizr.dsl.identifier": "activemq"
+                        },
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "23",
+                        "name": "Cassandra",
+                        "properties": {
+                            "structurizr.dsl.identifier": "cassandra"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena pedido",
+                                "destinationId": "22",
+                                "id": "47",
+                                "sourceId": "23",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "24",
+                        "name": "MySQL",
+                        "properties": {
+                            "structurizr.dsl.identifier": "mysql"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena",
+                                "destinationId": "22",
+                                "id": "48",
+                                "sourceId": "24",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    }
+                ],
+                "description": "pedidos de comestibles, medicamentos y más",
+                "documentation": {},
+                "id": "5",
+                "location": "Unspecified",
+                "name": "TURBO",
+                "properties": {
+                    "structurizr.dsl.identifier": "turbo"
+                },
+                "relationships": [
+                    {
+                        "description": "Utiliza",
+                        "destinationId": "26",
+                        "id": "32",
+                        "sourceId": "5",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Software System,TURBO"
+            },
+            {
+                "description": "Paypal MasterCard Visa",
+                "documentation": {},
+                "id": "25",
+                "location": "Unspecified",
+                "name": "Servicios de Pago",
+                "properties": {
+                    "structurizr.dsl.identifier": "serviciopagoexterno"
+                },
+                "relationships": [
+                    {
+                        "description": "Registra pagos",
+                        "destinationId": "5",
+                        "id": "31",
+                        "sourceId": "25",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "envia",
+                        "destinationId": "20",
+                        "id": "46",
+                        "sourceId": "25",
+                        "tags": "Relationship"
+                    }
+                ],
+                "tags": "Element,Software System"
+            },
+            {
+                "description": "Actualiza la ubicación de conductores y clientes",
+                "documentation": {},
+                "id": "26",
+                "location": "Unspecified",
+                "name": "Google Maps",
+                "properties": {
+                    "structurizr.dsl.identifier": "serviciogoogle"
+                },
+                "tags": "Element,Software System"
+            }
+        ]
+    },
+    "name": "TURBO",
+    "properties": {
+        "structurizr.dsl": "d29ya3NwYWNlICJUVVJCTyIgIlBlZGlkb3MgZGUgQ29tZXN0aWJsZXMiIHsKCiAgICAhaW1wbGllZFJlbGF0aW9uc2hpcHMgImZhbHNlIiAKICAgIAogICAgbW9kZWwgewogICAgICAgIGNsaWVudGUgPSBwZXJzb24gIkNsaWVudGUiICJTb2xpY2l0YSBzZXJ2aWNpb3MgZGUgZGVsaXZlcnkiICJDbGllbnRlIgogICAgICAgIGNvbmR1Y3RvciA9IHBlcnNvbiAiQ29uZHVjdG9yIiAiVHJhbnNwb3J0YSBwcm9kdWN0b3Mgc29saWNpdGFkb3MiICJDb25kdWN0b3IiCiAgICAgICAgb3BlcmFkb3IgPSBwZXJzb24gIk9wZXJhZG9yIiAiRW1wbGVhZG8gZW5jYXJnYWRvIGRlIGVucm9sYXIgeSB2ZXJpZmljYXIgYSBjb25kdWN0b3JlcywgeSBicmluZGFyIHNvcG9ydGUuIiAiT3BlcmFkb3IiCiAgICAgICAgYWxpYWRvID0gcGVyc29uICJBbGlhZG8iICJBYmFzdGVjZSBsb3MgcGVkaWRvcyIgIkFsaWFkbyIKICAgICAgICBUVVJCTyA9IHNvZnR3YXJlU3lzdGVtICJUVVJCTyIgInBlZGlkb3MgZGUgY29tZXN0aWJsZXMsIG1lZGljYW1lbnRvcyB5IG3DoXMiICJUVVJCTyIgewogICAgICAgICAgICBnZXN0aW9uVFVSQk8gPSBjb250YWluZXIgIkdlc3Rpb24gZGUgVFVSQk8iICJKYXZhIHkgU2NhbGEiCiAgICAgICAgICAgIGFwcENsaWVudGVzID0gY29udGFpbmVyICJBcHBDbGllbnRlcyIgIkphdmEgeSBTY2FsYSIKICAgICAgICAgICAgYXBwQ29uZHVjdG9yZXMgPSBjb250YWluZXIgIkFwcENvbmR1Y3RvcmVzIiAiSmF2YSB5IFNjYWxhIgogICAgICAgICAgICAKICAgICAgICAgICAgYXBpR1cgPSBjb250YWluZXIgIkFQSSBHQVRFV0FZIgogICAgICAgICAgICAKICAgICAgICAgICAgc2VydmljaW9UVVJCTyA9IGNvbnRhaW5lciAiU2VydmljaW8gVFVSQk8iIHsKICAgICAgICAgICAgICAgIGxvZzEgPSBjb21wb25lbnQgIkhhY2VyIHVuIHBlZGlkbyIKICAgICAgICAgICAgICAgIGxvZzIgPSBjb21wb25lbnQgIkxpbWl0ZSBkZSB0aWVtcG8iCiAgICAgICAgICAgICAgICBsb2czID0gY29tcG9uZW50ICJDYXRhbG9nbyBkZSBwcm9kdWN0b3MgZGVtYW5kYWRvcyIKICAgICAgICAgICAgICAgIGxvZzQgPSBjb21wb25lbnQgIkRpc3BvbmliaWxpZGFkIGRlIHNlcnZpY2lvIgogICAgICAgICAgICAgICAgbG9nNSA9IGNvbXBvbmVudCAiQ2Fycml0byBkZSBjb21wcmFzIgogICAgICAgICAgICAgICAgbG9nNiA9IGNvbXBvbmVudCAiRGlzcG9zaWNpw7NuIGRlIGNvbmR1Y3RvciIKICAgICAgICAgICAgICAgIGxvZzcgPSBjb21wb25lbnQgIkNvc3RvIGRlIHRhcmlmYSIKICAgICAgICAgICAgICAgIGxvZzggPSBjb21wb25lbnQgIk5pdmVsIGRlIHJlc3BvbnNhYmlsaWRhZCIKICAgICAgICAgICAgfQogICAgICAgICAgICBzZXJ2aWNpb0Rlc3BhY2hvID0gY29udGFpbmVyICJTZXJ2aWNpbyBkZSBEZXNwYWNobyIKICAgICAgICAgICAgc2VydmljaW9QYWdvID0gY29udGFpbmVyICJDYW5hbGl6YXIgUGFnbyIKICAgICAgICAgICAgc2VydmljaW9DYWNoZSA9IGNvbnRhaW5lciAiU2VydmljaW8gZGUgQ2FjaGUiCiAgICAgICAgICAgIAogICAgICAgICAgICAKICAgICAgICAgICAgYWN0aXZlTVEgPSBjb250YWluZXIgIkFjdGl2ZSBNUSIKICAgICAgICAgICAgY2Fzc2FuZHJhID0gY29udGFpbmVyICJDYXNzYW5kcmEiCiAgICAgICAgICAgIG15U1FMID0gY29udGFpbmVyICJNeVNRTCIKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgc2VydmljaW9QYWdvRXh0ZXJubyA9IHNvZnR3YXJlU3lzdGVtICJTZXJ2aWNpb3MgZGUgUGFnbyIgIlBheXBhbCBNYXN0ZXJDYXJkIFZpc2EiCiAgICAgICAgc2VydmljaW9Hb29nbGUgPSBzb2Z0d2FyZVN5c3RlbSAiR29vZ2xlIE1hcHMiICJBY3R1YWxpemEgbGEgdWJpY2FjacOzbiBkZSBjb25kdWN0b3JlcyB5IGNsaWVudGVzIgogICAgICAgIAogICAgICAgIC8vY29udGV4dAogICAgICAgIAogICAgICAgIGNsaWVudGUgLT4gVFVSQk8gIlNvbGljaXRhIHByb2R1Y3RvcyIKICAgICAgICBjb25kdWN0b3IgLT4gVFVSQk8gIlJlY2liZSB5IGVudHJlZ2EgcGVkaWRvcyIKICAgICAgICBvcGVyYWRvciAtPiBUVVJCTyAiR2VzdGlvbmFuIGVucm9sYW1pZW50byB5IHNvcG9ydGUiCiAgICAgICAgYWxpYWRvIC0+IFRVUkJPICJQcmVwYXJhIHkgZW50cmVnYSBlbCBwZWRpZG8gYWwgY29uZHVjdG9yIgogICAgICAgIAogICAgICAgIHNlcnZpY2lvUGFnb0V4dGVybm8gLT4gVFVSQk8gIlJlZ2lzdHJhIHBhZ29zIgogICAgICAgIFRVUkJPIC0+IHNlcnZpY2lvR29vZ2xlICJVdGlsaXphIgogICAgICAgIAogICAgICAgIC8vY29udGFpbmVyCiAgICAgICAgY2xpZW50ZSAtPiBhcHBDbGllbnRlcyAidXRpbGl6YSIKICAgICAgICBjb25kdWN0b3IgLT4gYXBwQ29uZHVjdG9yZXMgInV0aWxpemEiCiAgICAgICAgYWxpYWRvIC0+IGdlc3Rpb25UVVJCTyAidXRpbGl6YSIKICAgICAgICAKICAgICAgICBnZXN0aW9uVFVSQk8gLT4gYXBpR1cgInVzYSIKICAgICAgICBhcHBDbGllbnRlcyAtPiBhcGlHVyAidXNhIgogICAgICAgIGFwcENvbmR1Y3RvcmVzIC0+IGFwaUdXICJ1c2EiCiAgICAgICAgCiAgICAgICAgYXBpR1cgLT4gc2VydmljaW9UVVJCTyAidXNhIgogICAgICAgIGFwaUdXIC0+IHNlcnZpY2lvRGVzcGFjaG8gInVzYSIKICAgICAgICBhcGlHVyAtPiBzZXJ2aWNpb1BhZ28gInVzYSIKICAgICAgICBhcGlHVyAtPiBzZXJ2aWNpb0NhY2hlICJ1c2EiCiAgICAgICAgCiAgICAgICAgc2VydmljaW9EZXNwYWNobyAtPiBDYXNzYW5kcmEgImFsbWFjZW5hIGluZm9ybWFjacOzbiIKICAgICAgICBzZXJ2aWNpb1RVUkJPIC0+IENhc3NhbmRyYSAiYWxtYWNlbmEgaW5mb3JtYWNpw7NuIgogICAgICAgIHNlcnZpY2lvUGFnbyAtPiBteVNRTCAiZ3VhcmRhIGluZm9ybWFjacOzbiIKICAgICAgICAKICAgICAgICBzZXJ2aWNpb1BhZ29FeHRlcm5vIC0+IHNlcnZpY2lvUGFnbyAiZW52aWEiCiAgICAgICAgCiAgICAgICAgY2Fzc2FuZHJhIC0+IGFjdGl2ZU1RICJhbG1hY2VuYSBwZWRpZG8iCiAgICAgICAgbXlTUUwgLT4gYWN0aXZlTVEgImFsbWFjZW5hIgogICAgICAgIAogICAgICAgIC8vY29tcG9uZW50CiAgICAgICAgCiAgICAgICAgYXBpR1cgLT4gbG9nMSAidXNhIgogICAgICAgIGxvZzEgLT4gbG9nMiAidXNhIgogICAgICAgIGxvZzEgLT4gbG9nMyAidXNhIgogICAgICAgIGxvZzEgLT4gbG9nNCAidXNhIgogICAgICAgIGxvZzEgLT4gbG9nNSAidXNhIgogICAgICAgIGxvZzEgLT4gbG9nNiAidXNhIgogICAgICAgIGxvZzEgLT4gbG9nNyAidXNhIgogICAgICAgIGxvZzEgLT4gbG9nOCAidXNhIgogICAgfQogICAgCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBUVVJCTyAiQ29udGV4dG8iICJEaWFncmFtYSBkZSBDb250ZXh0byIgewogICAgICAgICAgICBpbmNsdWRlIGNvbmR1Y3RvcgogICAgICAgICAgICBpbmNsdWRlIGNsaWVudGUKICAgICAgICAgICAgaW5jbHVkZSBvcGVyYWRvcgogICAgICAgICAgICBpbmNsdWRlIGFsaWFkbwogICAgICAgICAgICBpbmNsdWRlIFRVUkJPCiAgICAgICAgICAgIGluY2x1ZGUgc2VydmljaW9QYWdvRXh0ZXJubwogICAgICAgICAgICBpbmNsdWRlIHNlcnZpY2lvR29vZ2xlCiAgICAgICAgfQogICAgICAgIAogICAgICAgIGNvbnRhaW5lciBUVVJCTyAiQ29udGVuZWRvcmVzIiAiVmlzdGEgZGUgY29udGVuZWRvcmVzIFRVUkJPIiB7CiAgICAgICAgICAgIGluY2x1ZGUgY29uZHVjdG9yCiAgICAgICAgICAgIGluY2x1ZGUgY2xpZW50ZQogICAgICAgICAgICBpbmNsdWRlIGFsaWFkbwogICAgICAgICAgICBpbmNsdWRlIFRVUkJPCiAgICAgICAgICAgIGluY2x1ZGUgZ2VzdGlvblRVUkJPCiAgICAgICAgICAgIGluY2x1ZGUgYXBwQ2xpZW50ZXMKICAgICAgICAgICAgaW5jbHVkZSBhcHBDb25kdWN0b3JlcwogICAgICAgICAgICBpbmNsdWRlIGFwaUdXCiAgICAgICAgICAgIGluY2x1ZGUgYWN0aXZlTVEKICAgICAgICAgICAgaW5jbHVkZSBzZXJ2aWNpb0Rlc3BhY2hvCiAgICAgICAgICAgIGluY2x1ZGUgc2VydmljaW9UVVJCTwogICAgICAgICAgICBpbmNsdWRlIHNlcnZpY2lvUGFnbwogICAgICAgICAgICBpbmNsdWRlIHNlcnZpY2lvQ2FjaGUKICAgICAgICAgICAgaW5jbHVkZSBjYXNzYW5kcmEKICAgICAgICAgICAgaW5jbHVkZSBteVNRTAogICAgICAgICAgICBpbmNsdWRlIHNlcnZpY2lvUGFnb0V4dGVybm8KICAgICAgICB9CiAgICAgICAgCiAgICAgICAgY29tcG9uZW50IHNlcnZpY2lvVFVSQk8gIkNvbXBvbmVudGVzIiAiVmlzdGEgZGUgY29tcG9uZW50ZXMiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQogICAgICAgIAogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgIlBlcnNvbiIgCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMjMyZWNkIiAKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIiAKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJPcmFjbGUiIHsKICAgICAgICAgICAgICAgIHNoYXBlICJDeWxpbmRlciIgCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjZWMwZTBlIiAKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIiAKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJUVVJCTyIgewogICAgICAgICAgICAgICAgc2hhcGUgIlJvdW5kZWRCb3giCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjZDQ5ODE2IgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiRWxlbWVudCIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMTE2OGJkCiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgICAgICBzaGFwZSBSb3VuZGVkQm94CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0="
+    },
+    "views": {
+        "componentViews": [
+            {
+                "containerId": "10",
+                "description": "Vista de componentes",
+                "dimensions": {
+                    "height": 1748,
+                    "width": 2480
+                },
+                "elements": [
+                    {
+                        "id": "9",
+                        "x": 1025,
+                        "y": 15
+                    },
+                    {
+                        "id": "11",
+                        "x": 1010,
+                        "y": 370
+                    },
+                    {
+                        "id": "12",
+                        "x": 95,
+                        "y": 465
+                    },
+                    {
+                        "id": "13",
+                        "x": 1900,
+                        "y": 450
+                    },
+                    {
+                        "id": "14",
+                        "x": 1535,
+                        "y": 1210
+                    },
+                    {
+                        "id": "15",
+                        "x": 1900,
+                        "y": 835
+                    },
+                    {
+                        "id": "16",
+                        "x": 265,
+                        "y": 840
+                    },
+                    {
+                        "id": "17",
+                        "x": 480,
+                        "y": 1215
+                    },
+                    {
+                        "id": "18",
+                        "x": 1000,
+                        "y": 1210
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "key": "Componentes",
+                "order": 3,
+                "paperSize": "A5_Landscape",
+                "relationships": [
+                    {
+                        "id": "49"
+                    },
+                    {
+                        "id": "50"
+                    },
+                    {
+                        "id": "51"
+                    },
+                    {
+                        "id": "52"
+                    },
+                    {
+                        "id": "53"
+                    },
+                    {
+                        "id": "54"
+                    },
+                    {
+                        "id": "55"
+                    },
+                    {
+                        "id": "56"
+                    }
+                ]
+            }
+        ],
+        "configuration": {
+            "branding": {},
+            "lastSavedView": "Contexto",
+            "metadataSymbols": "SquareBrackets",
+            "styles": {
+                "elements": [
+                    {
+                        "background": "#232ecd",
+                        "color": "#ffffff",
+                        "shape": "Person",
+                        "tag": "Person"
+                    },
+                    {
+                        "background": "#ec0e0e",
+                        "color": "#ffffff",
+                        "shape": "Cylinder",
+                        "tag": "Oracle"
+                    },
+                    {
+                        "background": "#d49816",
+                        "color": "#ffffff",
+                        "shape": "RoundedBox",
+                        "tag": "TURBO"
+                    },
+                    {
+                        "background": "#1168bd",
+                        "color": "#ffffff",
+                        "shape": "RoundedBox",
+                        "tag": "Element"
+                    }
+                ]
+            },
+            "terminology": {}
+        },
+        "containerViews": [
+            {
+                "description": "Vista de contenedores TURBO",
+                "dimensions": {
+                    "height": 2480,
+                    "width": 3508
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 800,
+                        "y": 10
+                    },
+                    {
+                        "id": "2",
+                        "x": 1455,
+                        "y": 10
+                    },
+                    {
+                        "id": "4",
+                        "x": 2110,
+                        "y": 5
+                    },
+                    {
+                        "id": "6",
+                        "x": 2075,
+                        "y": 490
+                    },
+                    {
+                        "id": "7",
+                        "x": 775,
+                        "y": 495
+                    },
+                    {
+                        "id": "8",
+                        "x": 1435,
+                        "y": 475
+                    },
+                    {
+                        "id": "9",
+                        "x": 1440,
+                        "y": 940
+                    },
+                    {
+                        "id": "10",
+                        "x": 255,
+                        "y": 1315
+                    },
+                    {
+                        "id": "19",
+                        "x": 1460,
+                        "y": 1360
+                    },
+                    {
+                        "id": "20",
+                        "x": 2330,
+                        "y": 950
+                    },
+                    {
+                        "id": "21",
+                        "x": 270,
+                        "y": 930
+                    },
+                    {
+                        "id": "22",
+                        "x": 1470,
+                        "y": 2150
+                    },
+                    {
+                        "id": "23",
+                        "x": 780,
+                        "y": 1735
+                    },
+                    {
+                        "id": "24",
+                        "x": 2310,
+                        "y": 1585
+                    },
+                    {
+                        "id": "25",
+                        "x": 3010,
+                        "y": 435
+                    }
+                ],
+                "externalSoftwareSystemBoundariesVisible": false,
+                "key": "Contenedores",
+                "order": 2,
+                "paperSize": "A4_Landscape",
+                "relationships": [
+                    {
+                        "id": "33"
+                    },
+                    {
+                        "id": "34"
+                    },
+                    {
+                        "id": "35"
+                    },
+                    {
+                        "id": "36"
+                    },
+                    {
+                        "id": "37"
+                    },
+                    {
+                        "id": "38"
+                    },
+                    {
+                        "id": "39"
+                    },
+                    {
+                        "id": "40"
+                    },
+                    {
+                        "id": "41"
+                    },
+                    {
+                        "id": "42"
+                    },
+                    {
+                        "id": "43"
+                    },
+                    {
+                        "id": "44"
+                    },
+                    {
+                        "id": "45"
+                    },
+                    {
+                        "id": "46"
+                    },
+                    {
+                        "id": "47"
+                    },
+                    {
+                        "id": "48"
+                    }
+                ],
+                "softwareSystemId": "5"
+            }
+        ],
+        "systemContextViews": [
+            {
+                "description": "Diagrama de Contexto",
+                "dimensions": {
+                    "height": 2000,
+                    "width": 3650
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 625,
+                        "y": 195
+                    },
+                    {
+                        "id": "2",
+                        "x": 1325,
+                        "y": 195
+                    },
+                    {
+                        "id": "3",
+                        "x": 1905,
+                        "y": 195
+                    },
+                    {
+                        "id": "4",
+                        "x": 2585,
+                        "y": 190
+                    },
+                    {
+                        "id": "5",
+                        "x": 1608,
+                        "y": 908
+                    },
+                    {
+                        "id": "25",
+                        "x": 2670,
+                        "y": 900
+                    },
+                    {
+                        "id": "26",
+                        "x": 1590,
+                        "y": 1500
+                    }
+                ],
+                "enterpriseBoundaryVisible": true,
+                "key": "Contexto",
+                "order": 1,
+                "relationships": [
+                    {
+                        "id": "27"
+                    },
+                    {
+                        "id": "28"
+                    },
+                    {
+                        "id": "29"
+                    },
+                    {
+                        "id": "30"
+                    },
+                    {
+                        "id": "31"
+                    },
+                    {
+                        "id": "32"
+                    }
+                ],
+                "softwareSystemId": "5"
+            }
+        ]
+    }
+}
