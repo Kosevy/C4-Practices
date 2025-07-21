@@ -1,0 +1,629 @@
+{
+    "configuration": {},
+    "description": "Documentación de intervenciones en territorio nacional",
+    "documentation": {},
+    "id": 104677,
+    "lastModifiedAgent": "structurizr-cloud/dsl-editor/a3a97070-7e80-40ee-b8be-021858b40ee5",
+    "lastModifiedDate": "2025-07-18T05:14:04Z",
+    "lastModifiedUser": "crimstagger@hotmail.com",
+    "model": {
+        "people": [
+            {
+                "id": "1",
+                "location": "Unspecified",
+                "name": "Personal de Campo",
+                "properties": {
+                    "structurizr.dsl.identifier": "personal"
+                },
+                "relationships": [
+                    {
+                        "description": "usa",
+                        "destinationId": "11",
+                        "id": "19",
+                        "sourceId": "1",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "usa",
+                        "destinationId": "4",
+                        "id": "20",
+                        "linkedRelationshipId": "19",
+                        "sourceId": "1"
+                    }
+                ],
+                "tags": "Element,Person"
+            },
+            {
+                "id": "2",
+                "location": "Unspecified",
+                "name": "Supervisor",
+                "properties": {
+                    "structurizr.dsl.identifier": "supervisor"
+                },
+                "relationships": [
+                    {
+                        "description": "usa",
+                        "destinationId": "12",
+                        "id": "21",
+                        "sourceId": "2",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "usa",
+                        "destinationId": "4",
+                        "id": "22",
+                        "linkedRelationshipId": "21",
+                        "sourceId": "2"
+                    }
+                ],
+                "tags": "Element,Person"
+            },
+            {
+                "id": "3",
+                "location": "Unspecified",
+                "name": "Administrador",
+                "properties": {
+                    "structurizr.dsl.identifier": "administrador"
+                },
+                "relationships": [
+                    {
+                        "description": "usa",
+                        "destinationId": "12",
+                        "id": "23",
+                        "sourceId": "3",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "usa",
+                        "destinationId": "4",
+                        "id": "24",
+                        "linkedRelationshipId": "23",
+                        "sourceId": "3"
+                    }
+                ],
+                "tags": "Element,Person"
+            }
+        ],
+        "softwareSystems": [
+            {
+                "containers": [
+                    {
+                        "documentation": {},
+                        "id": "5",
+                        "name": "Servicio de Registro de Atenciones en Campo",
+                        "properties": {
+                            "structurizr.dsl.identifier": "servicioregistro"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena informacion automáticamente",
+                                "destinationId": "13",
+                                "id": "33",
+                                "sourceId": "5",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "6",
+                        "name": "Servicio de transporte del paciente",
+                        "properties": {
+                            "structurizr.dsl.identifier": "serviciotransporte"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena registros",
+                                "destinationId": "13",
+                                "id": "34",
+                                "sourceId": "6",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "7",
+                        "name": "Servicio de Monitoreo y Supervisión",
+                        "properties": {
+                            "structurizr.dsl.identifier": "serviciomonitoreo"
+                        },
+                        "relationships": [
+                            {
+                                "description": "Muestra ubicaciones",
+                                "destinationId": "16",
+                                "id": "39",
+                                "sourceId": "7",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "Envia alertas por correo",
+                                "destinationId": "17",
+                                "id": "41",
+                                "sourceId": "7",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "8",
+                        "name": "Servicio de Reportes y Estadísticas",
+                        "properties": {
+                            "structurizr.dsl.identifier": "servicioreportes"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena reportes automaticos",
+                                "destinationId": "13",
+                                "id": "35",
+                                "sourceId": "8",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "Exporta reportes en PDF / Excel",
+                                "destinationId": "15",
+                                "id": "37",
+                                "sourceId": "8",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "9",
+                        "name": "Servicio de Seguridad, Acceso y Auditoría",
+                        "properties": {
+                            "structurizr.dsl.identifier": "servicioseguridad"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena intentos de acceso y auditorias",
+                                "destinationId": "13",
+                                "id": "36",
+                                "sourceId": "9",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "10",
+                        "name": "Servicio de Administración del Sistema",
+                        "properties": {
+                            "structurizr.dsl.identifier": "servicioadministracion"
+                        },
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "11",
+                        "name": "Aplicación Móvil",
+                        "properties": {
+                            "structurizr.dsl.identifier": "appmobile"
+                        },
+                        "relationships": [
+                            {
+                                "description": "registra datos y acciones",
+                                "destinationId": "14",
+                                "id": "25",
+                                "sourceId": "11",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "12",
+                        "name": "Aplicacion Web",
+                        "properties": {
+                            "structurizr.dsl.identifier": "appweb"
+                        },
+                        "relationships": [
+                            {
+                                "description": "consulta informacion y alertas",
+                                "destinationId": "14",
+                                "id": "26",
+                                "sourceId": "12",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "13",
+                        "name": "Base de Datos",
+                        "properties": {
+                            "structurizr.dsl.identifier": "db"
+                        },
+                        "relationships": [
+                            {
+                                "description": "almacena respaldo",
+                                "destinationId": "15",
+                                "id": "45",
+                                "sourceId": "13",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "documentation": {},
+                        "id": "14",
+                        "name": "API Gateway",
+                        "properties": {
+                            "structurizr.dsl.identifier": "apigw"
+                        },
+                        "relationships": [
+                            {
+                                "description": "utiliza",
+                                "destinationId": "5",
+                                "id": "27",
+                                "sourceId": "14",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "utiliza",
+                                "destinationId": "6",
+                                "id": "28",
+                                "sourceId": "14",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "utiliza",
+                                "destinationId": "7",
+                                "id": "29",
+                                "sourceId": "14",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "utiliza",
+                                "destinationId": "8",
+                                "id": "30",
+                                "sourceId": "14",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "utiliza",
+                                "destinationId": "9",
+                                "id": "31",
+                                "sourceId": "14",
+                                "tags": "Relationship"
+                            },
+                            {
+                                "description": "utiliza",
+                                "destinationId": "10",
+                                "id": "32",
+                                "sourceId": "14",
+                                "tags": "Relationship"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    }
+                ],
+                "description": "Plataforma Nacional de Registro de Atenciones de Emergencia",
+                "documentation": {},
+                "id": "4",
+                "location": "Unspecified",
+                "name": "PREME",
+                "properties": {
+                    "structurizr.dsl.identifier": "preme"
+                },
+                "relationships": [
+                    {
+                        "description": "Exporta reportes en PDF / Excel",
+                        "destinationId": "15",
+                        "id": "38",
+                        "linkedRelationshipId": "37",
+                        "sourceId": "4"
+                    },
+                    {
+                        "description": "Muestra ubicaciones",
+                        "destinationId": "16",
+                        "id": "40",
+                        "linkedRelationshipId": "39",
+                        "sourceId": "4"
+                    },
+                    {
+                        "description": "Envia alertas por correo",
+                        "destinationId": "17",
+                        "id": "42",
+                        "linkedRelationshipId": "41",
+                        "sourceId": "4"
+                    }
+                ],
+                "tags": "Element,Software System"
+            },
+            {
+                "documentation": {},
+                "id": "15",
+                "location": "Unspecified",
+                "name": "Google Cloud Service",
+                "properties": {
+                    "structurizr.dsl.identifier": "gcs"
+                },
+                "tags": "Element,Software System"
+            },
+            {
+                "documentation": {},
+                "id": "16",
+                "location": "Unspecified",
+                "name": "Servicio de visualizacion Geoespacial",
+                "properties": {
+                    "structurizr.dsl.identifier": "serviciogeoespacial"
+                },
+                "tags": "Element,Software System"
+            },
+            {
+                "documentation": {},
+                "id": "17",
+                "location": "Unspecified",
+                "name": "MailJet",
+                "properties": {
+                    "structurizr.dsl.identifier": "mailjet"
+                },
+                "tags": "Element,Software System"
+            },
+            {
+                "documentation": {},
+                "id": "18",
+                "location": "Unspecified",
+                "name": "oAuth 2.0",
+                "properties": {
+                    "structurizr.dsl.identifier": "auth"
+                },
+                "relationships": [
+                    {
+                        "description": "autenticación y permisos",
+                        "destinationId": "9",
+                        "id": "43",
+                        "sourceId": "18",
+                        "tags": "Relationship"
+                    },
+                    {
+                        "description": "autenticación y permisos",
+                        "destinationId": "4",
+                        "id": "44",
+                        "linkedRelationshipId": "43",
+                        "sourceId": "18"
+                    }
+                ],
+                "tags": "Element,Software System"
+            }
+        ]
+    },
+    "name": "PREME",
+    "properties": {
+        "structurizr.dsl": "d29ya3NwYWNlICJQUkVNRSIgIkRvY3VtZW50YWNpw7NuIGRlIGludGVydmVuY2lvbmVzIGVuIHRlcnJpdG9yaW8gbmFjaW9uYWwiIHsKICAgIG1vZGVsIHsKICAgICAgICAvLyBVc3VhcmlvcwogICAgICAgIHBlcnNvbmFsID0gcGVyc29uICJQZXJzb25hbCBkZSBDYW1wbyIKICAgICAgICBzdXBlcnZpc29yID0gcGVyc29uICJTdXBlcnZpc29yIgogICAgICAgIGFkbWluaXN0cmFkb3IgPSBwZXJzb24gIkFkbWluaXN0cmFkb3IiCiAgICAgICAgCiAgICAgICAgcHJlbWUgPSBzb2Z0d2FyZVN5c3RlbSAiUFJFTUUiICJQbGF0YWZvcm1hIE5hY2lvbmFsIGRlIFJlZ2lzdHJvIGRlIEF0ZW5jaW9uZXMgZGUgRW1lcmdlbmNpYSIgewogICAgICAgICAgICBzZXJ2aWNpb1JlZ2lzdHJvID0gY29udGFpbmVyICJTZXJ2aWNpbyBkZSBSZWdpc3RybyBkZSBBdGVuY2lvbmVzIGVuIENhbXBvIgogICAgICAgICAgICBzZXJ2aWNpb1RyYW5zcG9ydGUgPSBjb250YWluZXIgIlNlcnZpY2lvIGRlIHRyYW5zcG9ydGUgZGVsIHBhY2llbnRlIgogICAgICAgICAgICBzZXJ2aWNpb01vbml0b3JlbyA9IGNvbnRhaW5lciAiU2VydmljaW8gZGUgTW9uaXRvcmVvIHkgU3VwZXJ2aXNpw7NuIgogICAgICAgICAgICBzZXJ2aWNpb1JlcG9ydGVzID0gY29udGFpbmVyICJTZXJ2aWNpbyBkZSBSZXBvcnRlcyB5IEVzdGFkw61zdGljYXMiCiAgICAgICAgICAgIHNlcnZpY2lvU2VndXJpZGFkID0gY29udGFpbmVyICJTZXJ2aWNpbyBkZSBTZWd1cmlkYWQsIEFjY2VzbyB5IEF1ZGl0b3LDrWEiCiAgICAgICAgICAgIHNlcnZpY2lvQWRtaW5pc3RyYWNpb24gPSBjb250YWluZXIgIlNlcnZpY2lvIGRlIEFkbWluaXN0cmFjacOzbiBkZWwgU2lzdGVtYSIKICAgICAgICAgICAgYXBwTW9iaWxlID0gY29udGFpbmVyICJBcGxpY2FjacOzbiBNw7N2aWwiCiAgICAgICAgICAgIGFwcFdlYiA9IGNvbnRhaW5lciAiQXBsaWNhY2lvbiBXZWIiCiAgICAgICAgICAgIGRiID0gY29udGFpbmVyICJCYXNlIGRlIERhdG9zIiAKICAgICAgICAgICAgYXBpR1cgPSBjb250YWluZXIgIkFQSSBHYXRld2F5IgogICAgICAgIH0KICAgICAgICAKICAgICAgICAvLyBTaXN0ZW1hcyBFeHRlcm5vcwogICAgICAgIGdjcyA9IHNvZnR3YXJlU3lzdGVtICJHb29nbGUgQ2xvdWQgU2VydmljZSIKICAgICAgICBzZXJ2aWNpb0dlb2VzcGFjaWFsID0gc29mdHdhcmVTeXN0ZW0gIlNlcnZpY2lvIGRlIHZpc3VhbGl6YWNpb24gR2VvZXNwYWNpYWwiCiAgICAgICAgbWFpbGpldCA9IHNvZnR3YXJlU3lzdGVtICJNYWlsSmV0IgogICAgICAgIGF1dGggPSBzb2Z0d2FyZVN5c3RlbSAib0F1dGggMi4wIgogICAgICAgIAogICAgICAgIC8vIERpcmVjY2lvbmVzCiAgICAgICAgcGVyc29uYWwgLT4gYXBwTW9iaWxlICJ1c2EiCiAgICAgICAgc3VwZXJ2aXNvciAtPiBhcHBXZWIgInVzYSIKICAgICAgICBhZG1pbmlzdHJhZG9yIC0+IGFwcFdlYiAidXNhIgogICAgICAgIAogICAgICAgIGFwcE1vYmlsZSAtPiBhcGlHVyAicmVnaXN0cmEgZGF0b3MgeSBhY2Npb25lcyIKICAgICAgICBhcHBXZWIgLT4gYXBpR1cgImNvbnN1bHRhIGluZm9ybWFjaW9uIHkgYWxlcnRhcyIKICAgICAgICAKICAgICAgICBhcGlHVyAtPiBzZXJ2aWNpb1JlZ2lzdHJvICJ1dGlsaXphIgogICAgICAgIGFwaUdXIC0+IHNlcnZpY2lvVHJhbnNwb3J0ZSAidXRpbGl6YSIKICAgICAgICBhcGlHVyAtPiBzZXJ2aWNpb01vbml0b3JlbyAidXRpbGl6YSIKICAgICAgICBhcGlHVyAtPiBzZXJ2aWNpb1JlcG9ydGVzICJ1dGlsaXphIgogICAgICAgIGFwaUdXIC0+IHNlcnZpY2lvU2VndXJpZGFkICJ1dGlsaXphIgogICAgICAgIGFwaUdXIC0+IHNlcnZpY2lvQWRtaW5pc3RyYWNpb24gInV0aWxpemEiCiAgICAgICAgCiAgICAgICAgc2VydmljaW9SZWdpc3RybyAtPiBkYiAiYWxtYWNlbmEgaW5mb3JtYWNpb24gYXV0b23DoXRpY2FtZW50ZSIKICAgICAgICBzZXJ2aWNpb1RyYW5zcG9ydGUgLT4gZGIgImFsbWFjZW5hIHJlZ2lzdHJvcyIKICAgICAgICBzZXJ2aWNpb1JlcG9ydGVzIC0+IGRiICJhbG1hY2VuYSByZXBvcnRlcyBhdXRvbWF0aWNvcyIKICAgICAgICBzZXJ2aWNpb1NlZ3VyaWRhZCAtPiBkYiAiYWxtYWNlbmEgaW50ZW50b3MgZGUgYWNjZXNvIHkgYXVkaXRvcmlhcyIKICAgICAgICBzZXJ2aWNpb1JlcG9ydGVzIC0+IGdjcyAiRXhwb3J0YSByZXBvcnRlcyBlbiBQREYgLyBFeGNlbCIKICAgICAgICBzZXJ2aWNpb01vbml0b3JlbyAtPiBzZXJ2aWNpb0dlb2VzcGFjaWFsICJNdWVzdHJhIHViaWNhY2lvbmVzIgogICAgICAgIHNlcnZpY2lvTW9uaXRvcmVvIC0+IG1haWxKZXQgIkVudmlhIGFsZXJ0YXMgcG9yIGNvcnJlbyIKICAgICAgICAKICAgICAgICBhdXRoIC0+IHNlcnZpY2lvU2VndXJpZGFkICJhdXRlbnRpY2FjacOzbiB5IHBlcm1pc29zIgogICAgICAgIGRiIC0+IGdjcyAiYWxtYWNlbmEgcmVzcGFsZG8iCiAgICB9CiAgICAKICAgIHZpZXdzIHsKICAgICAgICBjb250YWluZXIgcHJlbWUgIkNvbnRlbmVkb3JlcyIgIlZpc3RhIGRlIGNvbnRlbmVkb3JlcyBkZWwgc2lzdGVtYSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b2xheW91dAogICAgICAgIH0KICAgICAgICAKICAgICAgICBzdHlsZXMgewogICAgICAgICAgICBlbGVtZW50ICJQZXJzb24iIHsKICAgICAgICAgICAgICAgIHNoYXBlICJQZXJzb24iCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjNTU2NGViIgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiQ29udGFpbmVyIiB7CiAgICAgICAgICAgICAgICBzaGFwZSAiUm91bmRlZEJveCIKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIiMyYzU1NDUiCiAgICAgICAgICAgICAgICBjb2xvciAiI2ZmZmZmZiIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQ=="
+    },
+    "views": {
+        "configuration": {
+            "branding": {},
+            "lastSavedView": "Contenedores",
+            "metadataSymbols": "SquareBrackets",
+            "styles": {
+                "elements": [
+                    {
+                        "background": "#2c5545",
+                        "color": "#ffffff",
+                        "shape": "RoundedBox",
+                        "tag": "Container"
+                    },
+                    {
+                        "background": "#5564eb",
+                        "color": "#ffffff",
+                        "shape": "Person",
+                        "tag": "Person"
+                    }
+                ]
+            },
+            "terminology": {}
+        },
+        "containerViews": [
+            {
+                "automaticLayout": {
+                    "applied": true,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "TopBottom",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "description": "Vista de contenedores del sistema",
+                "dimensions": {
+                    "height": 3800,
+                    "width": 6028
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 1744,
+                        "y": 144
+                    },
+                    {
+                        "id": "2",
+                        "x": 2469,
+                        "y": 144
+                    },
+                    {
+                        "id": "3",
+                        "x": 3169,
+                        "y": 144
+                    },
+                    {
+                        "id": "5",
+                        "x": 219,
+                        "y": 2044
+                    },
+                    {
+                        "id": "6",
+                        "x": 969,
+                        "y": 2044
+                    },
+                    {
+                        "id": "7",
+                        "x": 3969,
+                        "y": 2044
+                    },
+                    {
+                        "id": "8",
+                        "x": 1719,
+                        "y": 2044
+                    },
+                    {
+                        "id": "9",
+                        "x": 3219,
+                        "y": 2044
+                    },
+                    {
+                        "id": "10",
+                        "x": 2469,
+                        "y": 2044
+                    },
+                    {
+                        "id": "11",
+                        "x": 1719,
+                        "y": 844
+                    },
+                    {
+                        "id": "12",
+                        "x": 2469,
+                        "y": 844
+                    },
+                    {
+                        "id": "13",
+                        "x": 1040,
+                        "y": 2644
+                    },
+                    {
+                        "id": "14",
+                        "x": 2094,
+                        "y": 1444
+                    },
+                    {
+                        "id": "15",
+                        "x": 1377,
+                        "y": 3244
+                    },
+                    {
+                        "id": "16",
+                        "x": 4627,
+                        "y": 2644
+                    },
+                    {
+                        "id": "17",
+                        "x": 5377,
+                        "y": 2644
+                    },
+                    {
+                        "id": "18",
+                        "x": 4627,
+                        "y": 1444
+                    }
+                ],
+                "externalSoftwareSystemBoundariesVisible": false,
+                "key": "Contenedores",
+                "order": 1,
+                "relationships": [
+                    {
+                        "id": "19"
+                    },
+                    {
+                        "id": "21"
+                    },
+                    {
+                        "id": "23"
+                    },
+                    {
+                        "id": "25"
+                    },
+                    {
+                        "id": "26"
+                    },
+                    {
+                        "id": "27",
+                        "vertices": [
+                            {
+                                "x": 819,
+                                "y": 2044
+                            }
+                        ]
+                    },
+                    {
+                        "id": "28"
+                    },
+                    {
+                        "id": "29",
+                        "vertices": [
+                            {
+                                "x": 3819,
+                                "y": 2044
+                            }
+                        ]
+                    },
+                    {
+                        "id": "30"
+                    },
+                    {
+                        "id": "31"
+                    },
+                    {
+                        "id": "32"
+                    },
+                    {
+                        "id": "33"
+                    },
+                    {
+                        "id": "34"
+                    },
+                    {
+                        "id": "35"
+                    },
+                    {
+                        "id": "36",
+                        "vertices": [
+                            {
+                                "x": 3069,
+                                "y": 2344
+                            }
+                        ]
+                    },
+                    {
+                        "id": "37"
+                    },
+                    {
+                        "id": "39"
+                    },
+                    {
+                        "id": "41"
+                    },
+                    {
+                        "id": "43",
+                        "vertices": [
+                            {
+                                "x": 4598,
+                                "y": 1744
+                            },
+                            {
+                                "x": 3819,
+                                "y": 2044
+                            }
+                        ]
+                    },
+                    {
+                        "id": "45"
+                    }
+                ],
+                "softwareSystemId": "4"
+            }
+        ]
+    }
+}
